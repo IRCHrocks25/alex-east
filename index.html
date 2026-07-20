@@ -1,0 +1,1068 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cybersecurity Coach Online — Enterprise-grade protection for businesses like yours</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+/* ============ TOKENS ============ */
+:root{
+  --gold:#F9C111;--gold-deep:#E6AE00;
+  --ink:#212121;--ink-2:#2a2a2a;--ink-3:#161616;
+  --white:#FFFFFF;--mist:#EBEEF1;--mist-2:#F5F7F9;
+  --text:#4c4c4c;--muted:#8b8f94;--line:#E2E5E8;--line-2:#D6DADE;
+  --line-dark:rgba(255,255,255,.15);
+  --gutter:clamp(1.15rem,5vw,4.5rem);--maxw:1180px;
+  --display:'Montserrat',system-ui,sans-serif;--body:'Open Sans',system-ui,sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+/* keep the fixed nav from covering anchored section headings */
+section[id],div[id],#credibility,#threat,#human,#method,#offers,#about,#grade{scroll-margin-top:clamp(16px,3vh,32px)}
+body{font-family:var(--body);background:var(--white);color:var(--text);line-height:1.7;font-size:clamp(.98rem,.35vw + .92rem,1.05rem);overflow-x:hidden}
+img,svg,video{max-width:100%;height:auto;display:block}
+a{color:inherit;text-decoration:none}
+button{font:inherit;cursor:pointer;border:none;background:none;color:inherit}
+h1,h2,h3,h4{font-family:var(--display);line-height:1.12;color:var(--ink);font-weight:700}
+:focus-visible{outline:3px solid var(--gold-deep);outline-offset:3px}
+
+/* ============ SHARED ============ */
+.wrap{max-width:var(--maxw);margin:0 auto;padding-inline:var(--gutter)}
+.lead-i{font-family:var(--display);font-weight:500}
+.rule{width:52px;height:3px;background:var(--gold);border:0;margin:1.1rem 0}
+.rule.center{margin-inline:auto}
+.eyebrow{font-family:var(--display);font-weight:700;font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold-deep)}
+.sec{padding-block:clamp(3.4rem,7vw,6rem)}
+.sec-title{font-family:var(--display);font-weight:400;font-size:clamp(1.9rem,4.2vw,2.8rem);color:var(--ink);letter-spacing:.004em;line-height:1.16}
+.sec-title.bold{font-weight:400}
+.sec-title.oneline{white-space:normal}
+@media(min-width:860px){.sec-title.oneline{white-space:nowrap}}
+.centered{text-align:center;max-width:68ch;margin-inline:auto}
+.sub{font-size:clamp(1rem,1.6vw,1.15rem);color:var(--text);margin-top:1.2rem;max-width:56ch}
+.centered .sub{margin-inline:auto}
+.mist{background:var(--mist)}
+.dark{background:var(--ink);color:#d9dbdd}
+.dark .sec-title,.dark h3{color:#fff}.dark .sub{color:#b9bcbf}
+.stack>*+*{margin-top:1.15rem}
+
+/* line-icon chip */
+.chip{width:48px;height:48px;border-radius:12px;background:rgba(249,193,17,.16);display:grid;place-items:center;flex:none}
+.chip svg{width:24px;height:24px;stroke:var(--ink);fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.dark .chip{background:rgba(249,193,17,.2)}.dark .chip svg{stroke:var(--gold)}
+
+/* ============ BUTTONS ============ */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.7rem;width:100%;text-align:center;font-family:var(--display);font-weight:700;font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;white-space:normal;line-height:1.3;padding:1.05rem 1.9rem;border-radius:2px;min-height:52px;transition:background .2s,color .2s,border-color .2s,transform .15s}
+.btn:active{transform:translateY(1px)}
+.btn .chev{width:15px;height:15px;flex:none;stroke:currentColor;fill:none;stroke-width:2.4}
+.btn-gold{background:var(--gold);color:var(--ink)}.btn-gold:hover{background:var(--gold-deep)}
+.btn-ink{background:var(--ink);color:#fff}.btn-ink:hover{background:#000}
+.btn-out{background:transparent;color:var(--ink);border:2px solid var(--ink)}.btn-out:hover{background:var(--ink);color:#fff}
+.btn-out-light{background:transparent;color:#fff;border:2px solid var(--line-dark)}.btn-out-light:hover{background:#fff;color:var(--ink);border-color:#fff}
+@media(min-width:560px){.btn{width:auto}}
+
+/* ============ HEADER / NAV ============ */
+.header{position:absolute;top:0;left:0;right:0;z-index:60;background:transparent;transition:background .3s,box-shadow .3s}
+.header.solid{position:absolute;background:transparent;box-shadow:none}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding-block:1.6rem}
+.brand{display:flex;align-items:center;gap:.5rem;color:#fff}
+.brand img{height:38px;width:auto;display:block}
+@media(min-width:430px){.brand img{height:42px}}
+.nav-links{display:none}.nav-cta{display:none}
+.hamb{display:inline-flex;flex-direction:column;justify-content:center;gap:5px;width:46px;height:46px;padding:0 11px;border:1px solid rgba(255,255,255,.4);border-radius:2px}
+.hamb span{height:2px;width:100%;background:#fff;transition:transform .3s,opacity .2s}
+.hamb.is-open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.hamb.is-open span:nth-child(2){opacity:0}
+.hamb.is-open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.mmenu{position:fixed;inset:0;z-index:55;background:var(--ink);color:#fff;display:flex;flex-direction:column;gap:.1rem;
+  justify-content:center;justify-content:safe center;
+  padding:5.5rem var(--gutter) 2.5rem;
+  overflow-y:auto;-webkit-overflow-scrolling:touch;overscroll-behavior:contain;
+  transform:translateY(-100%);visibility:hidden;transition:transform .4s cubic-bezier(.7,0,.2,1),visibility 0s .4s}
+.mmenu.open{transform:translateY(0);visibility:visible;transition:transform .4s cubic-bezier(.7,0,.2,1),visibility 0s 0s}
+.mmenu>*{flex-shrink:0}
+.mmenu a{font-family:var(--display);font-weight:600;font-size:clamp(1rem,4.4vw,1.25rem);letter-spacing:.12em;text-transform:uppercase;padding:.75rem 0;border-bottom:1px solid var(--line-dark);color:#fff;display:flex;align-items:center;gap:.7rem;min-height:52px}
+.mmenu a .chev{width:15px;height:15px;stroke:var(--gold);fill:none;stroke-width:2.4;flex:none}
+.mmenu .btn{margin-top:1.3rem;border-bottom:0;justify-content:center;min-height:54px;width:100%}
+@media(max-height:720px){
+  .mmenu{padding:4.5rem var(--gutter) 2rem}
+  .mmenu a{padding:.55rem 0;min-height:46px;font-size:1rem;letter-spacing:.1em}
+  .mmenu .btn{margin-top:.9rem;min-height:48px}
+}
+@media(min-width:1000px){
+  .hamb{display:none}
+  .nav-links{display:flex;align-items:center;gap:.1rem}
+  .nav-links a{font-family:var(--display);font-weight:600;font-size:.77rem;letter-spacing:.13em;text-transform:uppercase;color:#e8e9ea;padding:.55rem .9rem;position:relative}
+  .nav-links a::after{content:"";position:absolute;left:.9rem;right:.9rem;bottom:.18rem;height:2px;background:var(--gold);transform:scaleX(0);transform-origin:left;transition:transform .25s}
+  .nav-links a:hover{color:#fff}
+  .nav-links a:hover::after,.nav-links a.active::after{transform:scaleX(1)}
+  .nav-cta{display:inline-flex;align-items:center;gap:.55rem;font-family:var(--display);font-weight:700;font-size:.75rem;letter-spacing:.13em;text-transform:uppercase;color:var(--ink);background:var(--gold);border-radius:2px;padding:.8rem 1.4rem;margin-left:.6rem;transition:background .2s}
+  .nav-cta:hover{background:var(--gold-deep)}
+}
+
+/* ============ HERO ============ */
+.hero{position:relative;background:var(--ink-3);color:#fff;overflow:hidden;isolation:isolate;min-height:100vh;display:flex;flex-direction:column}
+.hero::before{content:"";position:absolute;inset:0;z-index:1;
+  background:linear-gradient(90deg,rgba(13,13,13,.88) 0%,rgba(13,13,13,.7) 36%,rgba(13,13,13,.35) 68%,rgba(13,13,13,.2) 100%);pointer-events:none}
+.hero-video{position:absolute;inset:0;z-index:0;overflow:hidden}
+.hero-video video{width:100%;height:100%;object-fit:cover;object-position:center}
+.hero-body{flex:1;display:flex;align-items:center;padding-block:clamp(8rem,16vw,12rem) clamp(3rem,5vw,4rem);position:relative;z-index:2}
+.hero-body .wrap{max-width:none;margin:0;padding-left:clamp(1.2rem,3.5vw,3.5rem);padding-right:var(--gutter)}
+.hero-inner{max-width:960px;text-align:left}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:.7rem;font-family:var(--display);font-weight:700;font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold)}
+.hero-eyebrow::before{content:"";width:30px;height:2px;background:var(--gold)}
+.hero h1{font-family:var(--display);font-weight:400;font-size:clamp(2rem,4.6vw,3.3rem);letter-spacing:.004em;color:#fff;line-height:1.18;margin-top:1.3rem}
+.hero .tag{font-weight:400;font-size:clamp(1.05rem,2vw,1.3rem);color:#e6e7e9;margin-top:1.4rem;max-width:50ch;line-height:1.55}
+.hero .cred{font-family:var(--display);font-weight:600;font-size:clamp(.95rem,1.5vw,1.05rem);color:var(--gold);margin-top:1.1rem}
+.hero-cta{display:flex;flex-direction:column;gap:.9rem;align-items:stretch;margin-top:2.2rem}
+.hero-note{font-size:.85rem;color:#b7bbc0;margin-top:.8rem}
+@media(min-width:560px){.hero-cta{flex-direction:row;flex-wrap:nowrap;align-items:center}}
+.hero-stats{position:relative;z-index:2;border-top:1px solid rgba(255,255,255,.16)}
+.hero-stats .row{display:grid;grid-template-columns:repeat(2,1fr)}
+@media(min-width:700px){.hero-stats .row{grid-template-columns:repeat(4,1fr)}}
+.hero-stat{padding:1.3rem clamp(.9rem,2vw,1.6rem);display:flex;flex-direction:column;gap:.3rem;min-width:0}
+.hero-stat:first-child{padding-left:0}
+.hero-stat+.hero-stat{border-left:1px solid rgba(255,255,255,.16)}
+.hero-stat b{font-family:var(--display);font-weight:500;font-size:clamp(1.05rem,2.4vw,1.6rem);color:#fff;line-height:1}
+.hero-stat span{font-size:clamp(.66rem,1.4vw,.82rem);color:#b7bbc0;line-height:1.3}
+
+/* ============ MEDIA (image blocks) ============ */
+.split{display:grid;grid-template-columns:1fr;gap:0}
+@media(min-width:900px){.split{grid-template-columns:1fr 1fr;align-items:stretch}}
+.split-text{padding:clamp(2.4rem,5vw,4.5rem) var(--gutter)}
+.split-text .inner{max-width:34rem;margin-left:auto}
+.media{position:relative;min-height:380px;background:#1e1e1e;overflow:hidden}
+.media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center}
+.media.m-head img{object-position:center 20%}
+.media::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,20,20,.05) 40%,rgba(20,20,20,.55));pointer-events:none}
+.media .medialbl{position:absolute;left:1.3rem;bottom:1.2rem;z-index:3;font-family:var(--display);font-weight:700;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ink);background:var(--gold);padding:.45rem .85rem;border-radius:2px}
+@media(min-width:900px){
+  .media{clip-path:polygon(7% 0,100% 0,100% 100%,0 100%)}
+  .split.rev .media{clip-path:polygon(0 0,100% 0,93% 100%,0 100%)}
+}
+
+/* ============ CREDIBILITY ============ */
+.cred-sec{padding-block:clamp(3.4rem,7vw,6rem);background:var(--ink);color:#e6e7e9;position:relative;overflow:hidden}
+.cred-sec .wrap{position:relative;z-index:2}
+.cred-sec .sec-title{color:#fff}
+.cred-sec .sub{color:#e6e7e9}
+.cred-sec .rule{background:var(--gold)}
+.cred-sec .eyebrow{color:#ffd34d}
+.cred-layout{display:grid;grid-template-columns:1fr;gap:2.4rem;margin-top:2.4rem}
+@media(min-width:900px){.cred-layout{grid-template-columns:1fr 1fr;gap:3rem;align-items:start}}
+.cred-left{color:#e6e7e9}
+.cred-shot{position:relative;margin:1.8rem 0 0;overflow:hidden;border-radius:3px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.12);border-left:3px solid var(--gold)}
+.cred-shot img{display:block;width:100%;height:auto;max-height:300px;object-fit:contain}
+@media(min-width:900px){.cred-shot img{max-height:340px}}
+
+/* collapsible accordion */
+.cred-acc{border-top:1px solid rgba(255,255,255,.15)}
+.cred-acc details{border-bottom:1px solid rgba(255,255,255,.15)}
+.cred-acc summary{list-style:none;cursor:pointer;padding:1.2rem 0;display:flex;gap:1rem;align-items:center;font-family:var(--display);font-weight:600;font-size:clamp(1rem,2vw,1.15rem);color:#fff}
+.cred-acc summary::-webkit-details-marker{display:none}
+.cred-acc summary .cn{font-family:var(--display);font-weight:700;font-size:.72rem;color:#ffd34d;letter-spacing:.06em;width:26px;flex:none}
+.cred-acc summary .ct{flex:1;min-width:0}
+.cred-acc summary .ci{width:28px;height:28px;flex:none;border:1.5px solid rgba(255,255,255,.3);border-radius:50%;display:grid;place-items:center;transition:transform .3s,background .3s,border-color .3s}
+.cred-acc summary .ci svg{width:12px;height:12px;stroke:#fff;fill:none;stroke-width:2.6}
+.cred-acc details[open] summary .ci{transform:rotate(45deg);background:var(--gold);border-color:var(--gold)}
+.cred-acc details[open] summary .ci svg{stroke:var(--ink)}
+.cred-acc .ca{padding:0 0 1.4rem 2.2rem;color:#dcdee0;font-size:.95rem}
+.cred-acc .ca .cc-tags{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:.8rem}
+.cred-acc .ca .cc-tag{font-family:var(--display);font-weight:600;font-size:.7rem;letter-spacing:.06em;padding:.3rem .65rem;border-radius:999px;background:rgba(249,193,17,.2);color:#ffd34d}
+/* old cred styles removed */
+.cred-cols{display:grid;grid-template-columns:1fr;gap:1.4rem;margin-top:2.6rem;position:relative}
+@media(min-width:860px){.cred-cols{grid-template-columns:1fr 1fr;gap:1.8rem}}
+.cred-card{background:var(--ink-2);border:1px solid rgba(255,255,255,.08);border-radius:3px;padding:1.8rem;position:relative;overflow:hidden;transition:border-color .35s,transform .35s,box-shadow .35s}
+.cred-card::before{content:"";position:absolute;top:0;left:0;width:100%;height:3px;background:var(--gold);transform:scaleX(0);transform-origin:left;transition:transform .4s cubic-bezier(.4,0,.2,1)}
+.cred-card:hover{border-color:rgba(249,193,17,.3);transform:translateY(-4px);box-shadow:0 20px 50px -20px rgba(0,0,0,.6)}
+.cred-card:hover::before{transform:scaleX(1)}
+.cred-card .cc-head{display:flex;align-items:center;gap:1rem;margin-bottom:1.2rem}
+.cred-card .cc-num{font-family:var(--display);font-weight:700;font-size:.68rem;letter-spacing:.18em;color:var(--gold);min-width:3ch}
+.cred-card .cc-line{flex:1;height:1px;background:rgba(255,255,255,.12)}
+.cred-card .chip{transition:background .35s}
+.cred-card:hover .chip{background:rgba(249,193,17,.35)}
+.cred-card h3{font-family:var(--display);font-weight:600;font-size:1.15rem;color:#fff;margin-bottom:.7rem;transition:color .3s}
+.cred-card:hover h3{color:var(--gold)}
+.cred-card p{font-size:.93rem;color:#b9bcbf;line-height:1.65}
+.cred-card .cc-tags{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:1.1rem}
+.cred-card .cc-tag{font-family:var(--display);font-weight:600;font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(249,193,17,.8);background:rgba(249,193,17,.1);padding:.3rem .65rem;border-radius:2px;transition:background .3s,color .3s}
+.cred-card:hover .cc-tag{background:rgba(249,193,17,.2);color:var(--gold)}
+.cred-stats{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:rgba(255,255,255,.08);border-radius:3px;overflow:hidden;margin-top:1.8rem}
+@media(min-width:560px){.cred-stats{grid-template-columns:repeat(4,1fr)}}
+.cred-stat{background:var(--ink-2);padding:1.4rem 1.2rem;text-align:center;transition:background .3s}
+.cred-stat:hover{background:#303030}
+.cred-stat b{font-family:var(--display);font-weight:500;font-size:clamp(1.3rem,2.6vw,1.8rem);color:var(--gold);display:block;line-height:1;transition:transform .3s}
+.cred-stat:hover b{transform:scale(1.08)}
+.cred-stat span{font-size:.78rem;color:#999da2;margin-top:.5rem;display:block;line-height:1.3}
+.cred-fine{margin-top:1.8rem;font-size:.85rem;color:#8b8f94;max-width:72ch;position:relative;padding-left:1.2rem;border-left:2px solid rgba(249,193,17,.3)}
+
+/* ============ TESTIMONIALS ============ */
+.tgrid{display:grid;grid-template-columns:1fr;gap:0;margin-top:2.8rem}
+@media(min-width:820px){.tgrid{grid-template-columns:1fr 1fr}}
+.tcard{text-align:center;padding:1.6rem clamp(1rem,3vw,2.4rem)}
+@media(min-width:820px){.tcard+.tcard{border-left:1px solid var(--line)}}
+.tavatar{width:72px;height:72px;border-radius:50%;margin:0 auto 1.4rem;overflow:hidden;border:3px solid #fff;box-shadow:0 4px 14px rgba(0,0,0,.08),0 0 0 1px var(--line)}
+.tavatar img{width:100%;height:100%;object-fit:cover}
+.tavatar svg{width:30px;height:30px;stroke:var(--muted);fill:none;stroke-width:1.6}
+.tcard blockquote{font-size:1.02rem;line-height:1.65;color:#3d3d3d}
+.tcard .who{margin-top:1.2rem;font-family:var(--display);font-weight:600;font-size:.95rem;color:var(--ink)}
+.tcard .who em{display:block;font-style:normal;font-weight:400;font-size:.82rem;color:var(--muted);margin-top:.15rem}
+.tcard .who small{display:block;font-size:.72rem;color:var(--muted);margin-top:.5rem}
+
+/* ============ REFRAME ============ */
+.compare{display:grid;grid-template-columns:1fr;gap:1.4rem;margin-top:2.6rem}
+@media(min-width:760px){.compare{grid-template-columns:1fr 1fr}}
+.model{padding:2rem;border-radius:2px}
+.model .tag{font-family:var(--display);font-weight:700;font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;display:inline-flex;align-items:center;gap:.5rem;margin-bottom:1rem}
+.model .tag svg{width:15px;height:15px;fill:none;stroke-width:2}
+.model.old{background:var(--ink-2);border:1px solid var(--line-dark)}
+.model.old .tag{color:var(--muted)}.model.old .tag svg{stroke:var(--muted)}
+.model.old h3{color:#fff;font-family:var(--display);font-weight:600;font-size:1.2rem;margin-bottom:.7rem}
+.model.old p{color:#b9bcbf}
+.model.new{background:var(--gold);color:var(--ink)}
+.model.new .tag{color:#6b5400}.model.new .tag svg{stroke:#6b5400}
+.model.new h3{color:var(--ink);font-family:var(--display);font-weight:600;font-size:1.2rem;margin-bottom:.7rem}
+.model.new p{color:#3a2f00}
+.big-line{font-family:var(--display);font-weight:500;font-size:clamp(1.35rem,3.2vw,2rem);letter-spacing:.004em;line-height:1.22;color:var(--ink)}
+.dark .big-line{color:#fff}
+.pullquote{border-left:3px solid var(--gold);padding:.3rem 0 .3rem 1.6rem;margin:2.6rem 0;max-width:58ch}
+.pullquote p{font-family:var(--display);font-weight:400;font-size:clamp(1.2rem,2.6vw,1.55rem);line-height:1.45;color:var(--ink)}
+.dark .pullquote p{color:#fff}
+.pullquote .attr{margin-top:.9rem;font-family:var(--display);font-weight:600;font-size:.82rem;letter-spacing:.06em;color:var(--gold-deep)}
+.dark .pullquote .attr{color:var(--gold)}
+
+/* ============ METHOD ============ */
+.cols4{display:grid;grid-template-columns:1fr;gap:1.2rem;margin-top:2.8rem}
+@media(min-width:600px){.cols4{grid-template-columns:1fr 1fr}}
+@media(min-width:1000px){.cols4{grid-template-columns:repeat(4,minmax(0,1fr))}}
+.col4{position:relative;overflow:hidden;background:#fff;border:1px solid var(--line);border-top:3px solid var(--line-2);border-radius:3px;padding:1.7rem 1.5rem 1.6rem;display:flex;flex-direction:column;transition:transform .28s cubic-bezier(.2,.7,.3,1),box-shadow .28s,border-top-color .28s}
+.col4::before{content:attr(data-n);position:absolute;top:-.35em;right:.1em;font-family:var(--display);font-weight:800;font-size:5.6rem;line-height:1;color:rgba(33,33,33,.05);pointer-events:none;transition:color .28s}
+.col4:hover{transform:translateY(-6px);box-shadow:0 22px 44px -26px rgba(0,0,0,.45);border-top-color:var(--gold)}
+.col4:hover::before{color:rgba(249,193,17,.28)}
+.col4 .chip{position:relative;width:46px;height:46px;border-radius:10px;background:var(--ink);margin-bottom:1.1rem;transition:background .28s}
+.col4 .chip svg{width:22px;height:22px;stroke:var(--gold);transition:stroke .28s}
+.col4:hover .chip{background:var(--gold)}
+.col4:hover .chip svg{stroke:var(--ink)}
+.col4 .idx{position:relative;font-family:var(--display);font-weight:700;font-size:.66rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-deep)}
+.col4 h3{position:relative;font-family:var(--display);font-weight:700;font-size:1.45rem;letter-spacing:-.01em;color:var(--ink);margin:.35rem 0 .8rem;padding-bottom:.8rem}
+.col4 h3::after{content:"";position:absolute;left:0;bottom:0;width:28px;height:3px;background:var(--gold);transition:width .28s}
+.col4:hover h3::after{width:56px}
+.col4 p{position:relative;font-size:.92rem;line-height:1.6;color:#5a5e62;margin:0}
+
+/* ============ OFFERS ============ */
+.offers{display:grid;grid-template-columns:1fr;gap:1.4rem;margin-top:2.8rem}
+@media(min-width:820px){.offers{grid-template-columns:repeat(3,minmax(0,1fr));align-items:stretch}}
+.offer{background:#fff;border:1px solid var(--line);border-top:4px solid var(--gold);border-radius:2px;display:flex;flex-direction:column;overflow:hidden;transition:transform .22s,box-shadow .22s}
+.offer:hover{transform:translateY(-4px);box-shadow:0 22px 44px -26px rgba(0,0,0,.4)}
+.offer.feature{background:var(--ink);border-color:var(--ink);border-top-color:var(--gold)}
+.offer-img{position:relative;aspect-ratio:16/10;background:var(--mist);overflow:hidden}
+.offer-img img{width:100%;height:100%;object-fit:cover}
+.offer-pad{padding:1.6rem;display:flex;flex-direction:column;flex:1}
+.offer .oname{font-family:var(--display);font-weight:700;font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-deep)}
+.offer.feature .oname{color:var(--gold)}
+.offer h3{font-size:1.3rem;color:var(--ink);margin:.35rem 0 0;font-weight:700;line-height:1.2}
+.offer.feature h3{color:#fff}
+.offer .price{font-family:var(--display);font-weight:800;font-size:1.5rem;color:var(--ink);margin:.7rem 0 0}
+.offer.feature .price{color:var(--gold)}
+.offer .price small{display:inline;font-family:var(--body);font-weight:400;font-size:.8rem;color:var(--muted);letter-spacing:0;margin-left:.35rem}
+.offer.feature .price small{color:#b9bcbf}
+
+/* collapsible description */
+.offer details{margin-top:1.1rem;border-top:1px solid var(--line)}
+.offer.feature details{border-color:rgba(255,255,255,.14)}
+.offer summary{list-style:none;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:.8rem;padding:.85rem 0;font-family:var(--display);font-weight:600;font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ink)}
+.offer.feature summary{color:#fff}
+.offer summary::-webkit-details-marker{display:none}
+.offer summary .oi{width:24px;height:24px;flex:none;border:1.5px solid var(--gold);border-radius:50%;display:grid;place-items:center;color:var(--gold-deep);transition:transform .3s,background .3s,color .3s}
+.offer.feature summary .oi{color:var(--gold)}
+.offer summary .oi svg{width:11px;height:11px;stroke:currentColor;fill:none;stroke-width:2.8}
+.offer details[open] summary .oi{transform:rotate(45deg);background:var(--gold);color:var(--ink)}
+.offer .odesc{font-size:.9rem;color:var(--text);padding-bottom:1rem;margin:0}
+.offer.feature .odesc{color:#cfd1d3}
+.offer .btn{margin-top:auto;width:100%;white-space:normal}
+
+/* ============ OBJECTIONS ============ */
+.faq{margin-top:2.8rem;max-width:58rem;margin-inline:auto;border-top:1px solid var(--line)}
+.faq details{border-bottom:1px solid var(--line)}
+.faq summary{list-style:none;cursor:pointer;padding:1.35rem 0;display:flex;gap:1rem;align-items:flex-start;font-family:var(--display);font-weight:600;font-size:clamp(1.02rem,2.2vw,1.22rem);color:var(--ink)}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary .q{flex:1;min-width:0}
+.faq summary .ic{width:30px;height:30px;flex:none;border:2px solid var(--gold);color:var(--gold-deep);display:grid;place-items:center;transition:transform .3s,background .3s,color .3s}
+.faq summary .ic svg{width:13px;height:13px;stroke:currentColor;fill:none;stroke-width:2.6}
+.faq details[open] summary .ic{transform:rotate(45deg);background:var(--gold);color:var(--ink)}
+.faq .a{padding:0 0 1.6rem;color:var(--text);max-width:64ch}
+.faq .a .pullquote{margin:1.4rem 0 .3rem}
+.notfor{max-width:58rem;margin:2.6rem auto 0;background:var(--gold);border-left:3px solid var(--ink);padding:1rem 1.1rem;display:flex;gap:.75rem;align-items:flex-start;border-radius:2px}
+.notfor .chip{width:28px;height:28px;border-radius:6px;background:rgba(33,33,33,.14);flex:none}
+.notfor .chip svg{width:15px;height:15px;stroke:var(--ink);stroke-width:2}
+.notfor b{font-family:var(--display);font-weight:700;font-size:.82rem;letter-spacing:.02em;color:var(--ink);display:block;margin-bottom:.25rem}
+.notfor p{color:#4a3b00;font-size:.8rem;line-height:1.5}
+
+/* ============ READ MORE TOGGLE ============ */
+.readmore{margin-top:1.15rem}
+.readmore summary{list-style:none;cursor:pointer;display:inline-flex;align-items:center;gap:.5rem;font-family:var(--display);font-weight:700;font-size:.76rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-deep);padding:.35rem 0;transition:color .2s}
+.readmore summary::-webkit-details-marker{display:none}
+.readmore summary:hover{color:var(--ink)}
+.readmore summary .rm-ic{width:20px;height:20px;display:grid;place-items:center;transition:transform .3s}
+.readmore summary .rm-ic svg{width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:2.6}
+.readmore[open] summary .rm-ic{transform:rotate(180deg)}
+.readmore .rm-less{display:none}
+.readmore[open] .rm-more{display:none}
+.readmore[open] .rm-less{display:inline}
+.readmore .rm-body{margin-top:1.15rem}
+
+/* ============ FOUNDER ============ */
+.founder .split-text .inner{margin-left:0;max-width:38rem}
+
+/* ============ LEAD MAGNET ============ */
+.gold-sec{background:var(--gold);color:var(--ink)}
+.gold-sec .eyebrow{color:#6b5400}.gold-sec .sec-title{color:var(--ink)}
+.lead-inner{max-width:900px;margin-inline:auto;text-align:center}
+.leadlist{list-style:none;display:inline-grid;grid-template-columns:1fr 1fr;gap:.8rem 3rem;margin:1.8rem auto;text-align:left}
+@media(max-width:560px){.leadlist{grid-template-columns:1fr}}
+.leadlist li{display:flex;gap:.6rem;align-items:flex-start;font-weight:600;color:#3a2f00}
+.leadlist li svg{width:20px;height:20px;flex:none;margin-top:3px;stroke:var(--ink);fill:none;stroke-width:2.4}
+
+/* ============ FINAL ============ */
+.final-grid{display:grid;grid-template-columns:1fr;gap:2rem;align-items:start;margin-top:.5rem}
+@media(min-width:900px){.final-grid{grid-template-columns:1.1fr .9fr}}
+.opp-box{border:1px solid var(--line-dark);padding:1.6rem;border-radius:2px}
+.opp-box h4{font-family:var(--display);font-weight:600;font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);margin-bottom:1.2rem}
+.opp-row{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:1.1rem 0;border-top:1px solid var(--line-dark)}
+.opp-row:first-of-type{border-top:0}
+.opp-row .ot{font-family:var(--display);font-weight:500;font-size:1rem;color:#fff}
+.opp-row .os{font-family:var(--display);font-weight:600;font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);display:inline-flex;align-items:center;gap:.6rem}
+.opp-row .os .chev{width:15px;stroke:var(--gold);fill:none;stroke-width:2.4}
+.final-center{max-width:800px;margin-inline:auto;text-align:center}
+.final-center .sub{margin-inline:auto}
+.final-cta{display:flex;flex-direction:column;gap:.9rem;margin-top:2.2rem;justify-content:center;align-items:center}
+@media(min-width:560px){.final-cta{flex-direction:row;flex-wrap:wrap}}
+.kicker{font-family:var(--display);font-weight:500;font-size:clamp(1.1rem,2.3vw,1.4rem);color:var(--gold);max-width:46ch;margin:2.6rem auto 0;line-height:1.45}
+
+/* ============ FOOTER ============ */
+.foot-links{background:var(--white);border-top:1px solid var(--line)}
+.foot-links .wrap{display:grid;grid-template-columns:1fr;gap:0}
+@media(min-width:760px){.foot-links .wrap{grid-template-columns:repeat(3,1fr)}}
+.foot-links a{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:1.6rem 0;font-family:var(--display);font-weight:600;font-size:1.02rem;color:var(--ink);border-bottom:1px solid var(--line)}
+@media(min-width:760px){.foot-links a{border-bottom:0;border-right:1px solid var(--line);padding-inline:0 1.6rem}.foot-links a:last-child{border-right:0}}
+.foot-links a .chev{width:18px;stroke:var(--gold-deep);fill:none;stroke-width:2.4;transition:transform .2s}
+.foot-links a:hover .chev{transform:translateX(4px)}
+.foot-contact{background:var(--ink);color:#b9bcbf;padding-block:2.4rem}
+.foot-contact .fc{display:grid;grid-template-columns:1fr;gap:1.4rem}
+@media(min-width:700px){.foot-contact .fc{grid-template-columns:1.4fr 1fr 1fr}}
+.foot-contact .brand{margin-bottom:.8rem}
+.foot-contact .brand img{height:40px;width:auto}
+.foot-contact h5{font-family:var(--display);font-weight:700;font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:#fff;margin-bottom:.9rem}
+.foot-contact ul{list-style:none;display:grid;gap:.6rem;font-size:.92rem}
+.foot-contact li{display:flex;align-items:center;gap:.6rem}
+.foot-contact li svg{width:16px;height:16px;flex:none;stroke:var(--gold);fill:none;stroke-width:1.8}
+.foot-contact a:hover{color:var(--gold)}
+.foot-contact .fnote{font-size:.78rem;color:var(--muted)}
+.foot-bottom{border-top:1px solid rgba(255,255,255,.12);margin-top:2rem;padding-top:1.2rem;font-size:.82rem;color:var(--muted);display:flex;flex-direction:column;align-items:center;gap:.5rem;text-align:center}
+@media(min-width:640px){.foot-bottom{flex-direction:row;justify-content:space-between;text-align:left}}
+.built-by{font-family:var(--display);font-weight:600;font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;color:#8f959b;display:inline-flex;align-items:center;gap:.4rem}
+.built-by strong{font-weight:700;color:var(--gold)}
+/* footer bar removed */
+
+/* ============ GRADE SCALE (lead magnet visual) ============ */
+.grade-scale{margin:2.2rem auto 0;max-width:620px}
+.grade-row{display:grid;grid-template-columns:repeat(5,1fr);gap:.5rem}
+.grade-cell{background:rgba(33,33,33,.1);border:1.5px solid rgba(33,33,33,.25);border-radius:2px;padding:.9rem .4rem;text-align:center;font-family:var(--display);font-weight:700;font-size:1.25rem;color:#3a2f00}
+.grade-cell.is-you{background:var(--ink);border-color:var(--ink);color:var(--gold);position:relative}
+.grade-cell.is-you::after{content:"?";position:absolute;inset:0;display:grid;place-items:center;font-size:1.25rem}
+.grade-cell.is-you b{visibility:hidden}
+.grade-legend{display:flex;justify-content:space-between;margin-top:.6rem;font-family:var(--display);font-weight:600;font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:#6b5400}
+
+/* ============ OBJECTIONS 2-COL ============ */
+.obj-layout{display:grid;grid-template-columns:1fr;gap:2.2rem;margin-top:2.6rem;align-items:start}
+@media(min-width:960px){.obj-layout{grid-template-columns:.85fr 1.15fr;gap:3rem}}
+.obj-aside{position:relative}
+@media(min-width:960px){.obj-aside{position:sticky;top:7rem}}
+.obj-aside .notfor{margin:0}
+.obj-layout .faq{margin-top:0;max-width:none}
+
+/* ============ HUMAN VULNERABILITY ============ */
+.hv-top{display:grid;grid-template-columns:1fr;gap:2.2rem;align-items:center}
+@media(min-width:900px){.hv-top{grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:3.5rem}}
+.hv-media{position:relative;overflow:hidden;background:var(--mist);aspect-ratio:4/5;max-height:540px;border-radius:2px}
+.hv-media img{width:100%;height:100%;object-fit:cover;object-position:center}
+.hv-media .hv-tag{position:absolute;left:1rem;bottom:1rem;background:var(--gold);color:var(--ink);font-family:var(--display);font-weight:700;font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;padding:.45rem .85rem;border-radius:2px}
+
+/* case file card */
+.casefile{margin-top:clamp(2.6rem,5vw,4rem);background:var(--ink);color:#c9ccd0;border-radius:2px;overflow:hidden}
+.cf-head{display:flex;flex-wrap:wrap;align-items:center;gap:.8rem;padding:1.1rem clamp(1.4rem,3vw,2.4rem);border-bottom:1px solid rgba(255,255,255,.12)}
+.cf-label{font-family:var(--display);font-weight:700;font-size:.66rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ink);background:var(--gold);padding:.35rem .7rem;border-radius:2px}
+.cf-title{font-family:var(--display);font-weight:600;font-size:.98rem;color:#fff}
+.cf-body{display:grid;grid-template-columns:1fr}
+@media(min-width:860px){.cf-body{grid-template-columns:minmax(0,1.55fr) minmax(0,1fr)}}
+.cf-text{padding:clamp(1.4rem,3vw,2.4rem);display:grid;gap:1rem;font-size:.95rem}
+.cf-text .pullquote{margin:.4rem 0 0}
+.cf-text .pullquote p{color:#fff}
+.cf-side{padding:clamp(1.4rem,3vw,2.4rem);border-top:1px solid rgba(255,255,255,.12)}
+@media(min-width:860px){.cf-side{border-top:0;border-left:1px solid rgba(255,255,255,.12)}}
+.cf-stat{padding:.85rem 0;border-top:1px solid rgba(255,255,255,.1)}
+.cf-stat:first-child{border-top:0;padding-top:0}
+.cf-stat b{display:block;font-family:var(--display);font-weight:500;font-size:1.05rem;color:var(--gold);line-height:1.25}
+.cf-stat span{font-size:.84rem;color:#9a9d94}
+
+.hv-close{font-family:var(--display);font-weight:600;font-size:clamp(1rem,1.7vw,1.15rem);line-height:1.5;color:#8A6400;border-left:3px solid var(--gold);padding-left:1rem}
+
+/* closing block */
+.hv-bottom{display:grid;grid-template-columns:1fr;gap:2.2rem;align-items:center;margin-top:clamp(2.6rem,5vw,4rem)}
+@media(min-width:900px){.hv-bottom{grid-template-columns:1fr 1fr;gap:3.5rem}}
+.hv-shot{position:relative;overflow:hidden;aspect-ratio:16/10;background:var(--mist);border-radius:2px}
+.hv-shot img{width:100%;height:100%;object-fit:cover}
+.hv-shot .hv-tag{position:absolute;left:1rem;bottom:1rem;background:var(--gold);color:var(--ink);font-family:var(--display);font-weight:700;font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;padding:.45rem .85rem;border-radius:2px}
+
+/* ============ PRESS / AS SEEN ON ============ */
+.press{position:relative;z-index:2;border-top:1px solid rgba(255,255,255,.1)}
+.press .wrap{display:flex;flex-direction:column;align-items:center;gap:1.1rem;padding-block:1.5rem}
+.press-label{font-family:var(--display);font-weight:700;font-size:.64rem;letter-spacing:.22em;text-transform:uppercase;color:#8f959b;white-space:nowrap;margin:0;text-align:center}
+.press-logos{list-style:none;display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:1.4rem 2.6rem;margin:0;padding:0}
+@media(min-width:940px){.press-logos{gap:3.2rem}}
+.press-logos li{display:flex;align-items:center}
+.press-logos img{
+  height:40px;width:auto;max-width:208px;object-fit:contain;
+  filter:grayscale(1) brightness(0) invert(1);
+  opacity:.55;transition:opacity .25s ease;
+}
+.press-logos img.p-tall{height:52px;max-width:128px}
+.press-logos li:hover img{opacity:.95}
+@media(max-width:520px){
+  .press-logos img{height:30px;max-width:150px}
+  .press-logos img.p-tall{height:38px;max-width:96px}
+}
+@media(prefers-reduced-motion:reduce){.press-logos img{transition:none}}
+
+/* ============ SECTION BACKGROUND IMAGES ============ */
+.has-bg{position:relative;overflow:hidden;isolation:isolate}
+.sec-bg{position:absolute;inset:0;z-index:0;pointer-events:none}
+.sec-bg img{width:100%;height:100%;object-fit:cover;object-position:center;opacity:.62}
+.has-bg::before{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;
+  background:linear-gradient(180deg,rgba(18,18,18,.88) 0%,rgba(18,18,18,.62) 45%,rgba(18,18,18,.9) 100%)}
+.has-bg > .wrap{position:relative;z-index:2}
+/* left-weighted variant for text on the left */
+.has-bg.bg-left::before{background:linear-gradient(90deg,rgba(18,18,18,.93) 0%,rgba(18,18,18,.78) 45%,rgba(18,18,18,.45) 100%)}
+/* soft variant: image reads at ~60%, gradient shields the heading zone */
+.has-bg.bg-soft .sec-bg img{opacity:.6}
+.has-bg.bg-soft::before{background:linear-gradient(180deg,rgba(18,18,18,.66) 0%,rgba(18,18,18,.34) 48%,rgba(18,18,18,.48) 100%)}
+.has-bg.bg-soft .sub,.has-bg.bg-soft p{color:#e6e7e9}
+/* cards carry their own backgrounds — keep their own text colours */
+.has-bg .model.new h3{color:var(--ink)}
+.has-bg .model.new p{color:#3a2f00}
+.has-bg .model.new .tag{color:#604a00}
+.has-bg .model.old p{color:#c9ccd0}
+/* copy-heavy variant: same 60% image, stronger shield for small text */
+.has-bg.bg-copy .sec-bg img{opacity:.6}
+.has-bg.bg-copy::before{background:linear-gradient(180deg,rgba(18,18,18,.74) 0%,rgba(18,18,18,.52) 48%,rgba(18,18,18,.62) 100%)}
+
+/* ============ SCROLL TEXT REVEAL ============ */
+.scroll-text-sec{background:var(--ink);padding-block:clamp(3.5rem,8vw,6rem)}
+.scroll-text{max-width:860px}
+.st-eyebrow{display:inline-flex;align-items:center;gap:.7rem;font-family:var(--display);font-weight:700;font-size:.7rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-bottom:1.6rem}
+.st-eyebrow::before,.st-eyebrow::after{content:"";width:26px;height:2px;background:var(--gold)}
+/* level 1 — the statement */
+.st-lead{font-family:var(--display);font-weight:500;font-size:clamp(1.7rem,3.6vw,2.7rem);line-height:1.22;letter-spacing:-.01em;color:#fff;margin:0}
+.st-lead .hl{color:var(--gold)}
+/* divider */
+.st-rule{width:44px;height:3px;background:var(--gold);border:0;margin:1.8rem auto}
+/* level 2 — supporting */
+.st-mid{font-family:var(--display);font-weight:400;font-size:clamp(1.1rem,1.9vw,1.4rem);line-height:1.5;color:#d6d8da;margin:0;max-width:62ch;margin-inline:auto}
+/* level 3 — detail */
+.st-body{font-family:var(--body);font-weight:400;font-size:clamp(.95rem,1.3vw,1.05rem);line-height:1.75;color:#a9adb1;margin:1.8rem auto 0;max-width:64ch}
+/* reveal animation preserves each level's own colour */
+.st-line{opacity:.22;transition:opacity .9s ease,transform .9s ease;transform:translateY(10px)}
+.st-line.st-active{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.st-line{opacity:1;transform:none}}
+
+/* mobile: logo takes ~80% of the bar, hamburger ~20% */
+@media(max-width:999px){
+  .nav{padding-block:1rem;gap:.6rem}
+  .header .wrap.nav{padding-inline:.85rem}
+  .brand{flex:1 1 auto;min-width:0;min-height:0}
+  .brand img{width:100%;height:auto;max-height:88px;object-fit:contain;object-position:left center}
+  .hamb{flex:0 0 46px;margin-left:auto}
+  /* taller logo bar needs more breathing room above hero copy */
+  .hero-body{padding-top:10.5rem}
+}
+@media(max-width:400px){
+  .brand img{max-height:74px}
+  .hamb{flex:0 0 44px;width:44px;height:44px;padding:0 10px}
+}
+
+/* ============ REVEAL ============ */
+
+/* ============ MOBILE REFINEMENTS ============ */
+@media(max-width:768px){
+  /* comfortable tap targets */
+  .foot-contact li a{display:inline-flex;align-items:center;min-height:44px;padding-block:.25rem}
+  .readmore summary{min-height:44px;padding-block:.7rem}
+  .cred-acc summary{padding-block:1.1rem}
+  .faq summary{padding-block:1.2rem}
+  .offer summary{min-height:44px}
+  /* keep micro-labels legible */
+  .hero-stat span{font-size:.78rem}
+  .press-label{font-size:.72rem}
+  .hv-tag,.cf-label{font-size:.72rem}
+  .col4 .idx{font-size:.72rem}
+  .cred-acc summary .cn{font-size:.76rem}
+  .offer .oname{font-size:.74rem}
+  .built-by{font-size:.74rem}
+  /* avoid iOS auto-zoom on tap and keep body copy comfortable */
+  body{font-size:1rem}
+}
+@media(max-width:520px){
+  /* stat bar breathes on small phones */
+  .hero-stat{padding:1.1rem .75rem}
+  .hero-stat b{font-size:1.15rem}
+  .hero-stat span{font-size:.74rem}
+  /* case-file side list */
+  .cf-stat b{font-size:1rem}
+}
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease}
+.reveal.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}.reveal{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="chev" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></symbol>
+  <symbol id="caret" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></symbol>
+  <symbol id="check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol>
+  <symbol id="plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+  <symbol id="user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-6 8-6s8 2 8 6"/></symbol>
+  <symbol id="ic-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></symbol>
+  <symbol id="ic-grad" viewBox="0 0 24 24"><path d="M12 4 2 9l10 5 10-5-10-5Z"/><path d="M6 11.5V16c0 1.4 2.7 3 6 3s6-1.6 6-3v-4.5"/></symbol>
+  <symbol id="ic-shield" viewBox="0 0 24 24"><path d="M12 3l7 3v5c0 4.6-3 7.6-7 9-4-1.4-7-4.4-7-9V6l7-3Z"/></symbol>
+  <symbol id="ic-shield-check" viewBox="0 0 24 24"><path d="M12 3l7 3v5c0 4.6-3 7.6-7 9-4-1.4-7-4.4-7-9V6l7-3Z"/><path d="M9 12l2 2 4-4"/></symbol>
+  <symbol id="ic-cycle" viewBox="0 0 24 24"><path d="M4 11a8 8 0 0 1 14-5"/><path d="M20 13a8 8 0 0 1-14 5"/><path d="M18 3v3h-3"/><path d="M6 21v-3h3"/></symbol>
+  <symbol id="ic-award" viewBox="0 0 24 24"><circle cx="12" cy="9" r="5"/><path d="M9 13.5 7.5 21 12 18.5 16.5 21 15 13.5"/></symbol>
+  <symbol id="ic-clip" viewBox="0 0 24 24"><path d="M9 4H7a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2h-2"/><rect x="9" y="3" width="6" height="3.2" rx="1"/><path d="M9 13l2 2 4-4"/></symbol>
+  <symbol id="ic-play" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M10 8.5l5.5 3.5L10 15.5Z"/></symbol>
+  <symbol id="ic-bolt" viewBox="0 0 24 24"><path d="M13 2 4 14h7l-1 8 9-12h-7l1-8Z"/></symbol>
+  <symbol id="ic-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+  <symbol id="ic-alert" viewBox="0 0 24 24"><path d="M12 3 2 20h20L12 3Z"/><path d="M12 10v4M12 17h.01"/></symbol>
+  <symbol id="ic-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></symbol>
+  <symbol id="ic-phone" viewBox="0 0 24 24"><path d="M4 4h4l2 5-2.5 1.5a11 11 0 0 0 6 6L17 14l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 2 6a2 2 0 0 1 2-2Z"/></symbol>
+  <symbol id="ic-doc" viewBox="0 0 24 24"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8l-5-5Z"/><path d="M14 3v5h5"/></symbol>
+  <symbol id="fb" viewBox="0 0 24 24"><path d="M14 8h3V4h-3c-2.2 0-4 1.8-4 4v2H7v4h3v6h4v-6h3l1-4h-4V8c0-.6.4-1 1-1Z"/></symbol>
+  <symbol id="tw" viewBox="0 0 24 24"><path d="M22 5.9c-.7.3-1.5.5-2.3.6.8-.5 1.5-1.3 1.8-2.3-.8.5-1.7.8-2.6 1a4 4 0 0 0-6.9 3.7A11.3 11.3 0 0 1 3.8 4.6a4 4 0 0 0 1.2 5.3c-.6 0-1.2-.2-1.7-.5a4 4 0 0 0 3.2 4c-.5.1-1.1.2-1.7 0a4 4 0 0 0 3.7 2.8A8 8 0 0 1 2 18a11.3 11.3 0 0 0 17.4-9.5c.8-.6 1.5-1.3 2-2.1-.1-.2-.3-.3-.4-.5Z"/></symbol>
+  <symbol id="li" viewBox="0 0 24 24"><path d="M6.5 8H3v13h3.5V8ZM4.7 6.5A2 2 0 1 0 4.7 2.5a2 2 0 0 0 0 4ZM21 21h-3.5v-6.9c0-1.6-.6-2.7-2-2.7-1.1 0-1.7.7-2 1.5-.1.3-.1.6-.1 1V21H9.9s.1-11 0-12h3.5v1.7c.5-.7 1.3-1.8 3.2-1.8 2.3 0 4.1 1.5 4.1 4.8V21Z"/></symbol>
+</svg>
+
+<!-- HEADER -->
+<header class="header" id="top">
+  <div class="wrap nav">
+    <a class="brand" href="#top" aria-label="Cybersecurity Coach Online home"><img src="https://cdn.katalyst-crm.com/t1/ALEX%20EAST%20logo.png" alt="Cybersecurity Coach Online"></a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="#threat" class="active">The Threat</a>
+      <a href="#human">Human Factor</a>
+      <a href="#method">Method</a>
+      <a href="#offers">Offers</a>
+      <a href="#about">About</a>
+    </nav>
+    <a href="#grade" class="nav-cta">Free Grade</a>
+    <button class="hamb" id="hamb" aria-label="Open menu" aria-expanded="false" aria-controls="mmenu"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<nav class="mmenu" id="mmenu" aria-label="Mobile">
+  <a href="#threat"><svg class="chev"><use href="#chev"/></svg> The Threat</a>
+  <a href="#human"><svg class="chev"><use href="#chev"/></svg> Human Factor</a>
+  <a href="#method"><svg class="chev"><use href="#chev"/></svg> Method</a>
+  <a href="#offers"><svg class="chev"><use href="#chev"/></svg> Offers</a>
+  <a href="#about"><svg class="chev"><use href="#chev"/></svg> About</a>
+  <a href="#grade" class="btn btn-gold">Get Your Free Security Grade</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero" aria-labelledby="hero-h">
+  <div class="hero-video" aria-hidden="true">
+    <video autoplay muted loop playsinline poster="https://d8j0ntlcm91z4.cloudfront.net/user_35NBuSfIPglHIOMZxxqoxDRFcyj/hf_20260716_100646_859c3786-1fba-45ed-9a97-188100a57a35.png">
+      <source src="https://cdn.katalyst-crm.com/t1/0_Security_Lock_3840x2160.mp4" type="video/mp4">
+    </video>
+  </div>
+  <div class="hero-body">
+    <div class="wrap">
+      <div class="hero-inner">
+        <span class="hero-eyebrow">AI-era cybersecurity · 10–200 employee businesses</span>
+        <h1 id="hero-h">Your Business Is Already a Target.<br>AI Just Made Sure of It.</h1>
+        <p class="tag">The question is no longer if your business will be targeted. It's whether you'll be ready when it is.</p>
+        <p class="cred">Fifteen years defending Fortune 50 companies. Now doing the same for businesses like yours.</p>
+        <div class="hero-cta">
+          <a href="#grade" class="btn btn-gold">Get Your Free Security Grade <svg class="chev"><use href="#chev"/></svg></a>
+          <a href="#offers" class="btn btn-out-light">Book Your Free Strategy Call</a>
+        </div>
+        <span class="hero-note">Takes 3 minutes. No technical background required.</span>
+      </div>
+    </div>
+  </div>
+  <div class="press">
+    <div class="wrap">
+      <p class="press-label">As Seen On</p>
+      <ul class="press-logos">
+        <li><img src="https://cdn.katalyst-crm.com/t1/associated-press-new-york-city-washington-d-c-news-media-others%201.png" alt="Associated Press" loading="lazy"></li>
+        <li><img class="p-tall" src="https://cdn.katalyst-crm.com/t1/NBC-Logo-500x281-1%20(1).png" alt="NBC" loading="lazy"></li>
+        <li><img src="https://cdn.katalyst-crm.com/t1/fox-news-logo-fox-news-onboarding-logo-trustx-templates.png" alt="Fox News" loading="lazy"></li>
+        <li><img class="p-tall" src="https://cdn.katalyst-crm.com/t1/abc-broadcast-logo-white.png" alt="ABC" loading="lazy"></li>
+        <li><img class="p-tall" src="https://cdn.katalyst-crm.com/t1/CBS_logo_(2020).svg" alt="CBS" loading="lazy"></li>
+      </ul>
+    </div>
+  </div>
+  <div class="hero-stats">
+    <div class="wrap row">
+      <div class="hero-stat"><b>15+</b><span>Years in enterprise cybersecurity</span></div>
+      <div class="hero-stat"><b>RSA '22</b><span>Global conference speaker</span></div>
+      <div class="hero-stat"><b>4</b><span>Published &amp; in-production titles</span></div>
+      <div class="hero-stat"><b>10–200</b><span>Employee businesses served</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- CREDIBILITY -->
+<section class="cred-sec has-bg bg-copy" id="credibility">
+  <div class="sec-bg" aria-hidden="true"><img src="https://cdn.katalyst-crm.com/t1/gffg.png" alt="" loading="lazy"></div>
+  <div class="wrap">
+    <div class="reveal">
+      <p class="eyebrow">Credibility</p>
+      <h2 class="sec-title" style="margin-top:.7rem;max-width:900px">Fifteen Years Defending the World's Largest Companies</h2>
+      <hr class="rule">
+    </div>
+
+    <div class="cred-layout">
+      <div class="cred-left reveal">
+        <p>Alex East spent fifteen years defending Fortune 50 corporations and government agencies against the same threats now aimed at businesses with a fraction of their resources. He translates that experience into plain, actionable protection for companies that can't afford a full-time security team.</p>
+        <p style="margin-top:1rem;font-size:.9rem;color:#c4c7ca">Alex has completed professional certificate coursework, not academic degrees, from Stanford, the University of Washington, the University of London, and the University of Michigan.</p>
+        <figure class="cred-shot">
+          <img src="https://cdn.katalyst-crm.com/t1/ChatGPT%20Image%2020%20Tem%202026%2007_09_45.png" alt="Alex East, founder of Cybersecurity Coach Online" loading="lazy">
+        </figure>
+      </div>
+      <div class="cred-acc reveal">
+        <details open>
+          <summary><span class="cn">01</span><span class="ct">Education and Certification</span><span class="ci"><svg><use href="#plus"/></svg></span></summary>
+          <div class="ca">
+            <p>Bachelor's degree in Telecommunications, University of North London. AWS Cloud Security certification.</p>
+            <div class="cc-tags"><span class="cc-tag">Telecom</span><span class="cc-tag">AWS Security</span><span class="cc-tag">UNL</span></div>
+          </div>
+        </details>
+        <details>
+          <summary><span class="cn">02</span><span class="ct">Recognized Authority</span><span class="ci"><svg><use href="#plus"/></svg></span></summary>
+          <div class="ca">
+            <p>Speaker, RSA Conference 2022, the cybersecurity industry's largest global event. Featured expert, Good Day Sacramento. Guest, Symantec Podcast. Author of Cybersecurity for Seniors Made Easy and A Parent's Guide to Online Safety, with two more titles in production, including AI-Powered Scams.</p>
+            <div class="cc-tags"><span class="cc-tag">RSA 2022</span><span class="cc-tag">Published Author</span><span class="cc-tag">Media Expert</span></div>
+          </div>
+        </details>
+        <details>
+          <summary><span class="cn">03</span><span class="ct">Enterprise Defense Track Record</span><span class="ci"><svg><use href="#plus"/></svg></span></summary>
+          <div class="ca">
+            <p>Fifteen years protecting Fortune 50 corporations and government agencies against nation-state-level threats, social engineering, and advanced persistent threats. Now applying the same methodology to businesses with 10 to 200 employees.</p>
+            <div class="cc-tags"><span class="cc-tag">Fortune 50</span><span class="cc-tag">Government</span><span class="cc-tag">15 Years</span></div>
+          </div>
+        </details>
+        <details>
+          <summary><span class="cn">04</span><span class="ct">Continued Professional Development</span><span class="ci"><svg><use href="#plus"/></svg></span></summary>
+          <div class="ca">
+            <p>Professional certificate coursework from Stanford, the University of Washington, the University of London, and the University of Michigan, covering terrorism threat analysis, malicious software, and information risk management.</p>
+            <div class="cc-tags"><span class="cc-tag">Stanford</span><span class="cc-tag">U of Michigan</span><span class="cc-tag">Threat Analysis</span></div>
+          </div>
+        </details>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="sec mist" aria-labelledby="test-h">
+  <div class="wrap">
+    <div class="reveal" style="text-align:center;margin-bottom:1rem">
+      <h2 class="sec-title" id="test-h" style="display:inline-block">What That Experience Sounds Like in Practice</h2>
+      <hr class="rule center">
+    </div>
+    <div class="tgrid reveal">
+      <figure class="tcard">
+        <div class="tavatar"><img src="https://d8j0ntlcm91z4.cloudfront.net/user_35NBuSfIPglHIOMZxxqoxDRFcyj/hf_20260716_103907_7dceda08-a0a7-4e50-8c45-a92a29df5a37.png" alt="Sarah Mitchell" loading="lazy"></div>
+        <blockquote>"Alex did a great job at turning his vast knowledge and experience of cybersecurity into a format suitable for the lay person."</blockquote>
+        <figcaption class="who">Sarah Mitchell<em>Operations Director, Pinnacle Logistics</em></figcaption>
+      </figure>
+      <figure class="tcard">
+        <div class="tavatar"><img src="https://d8j0ntlcm91z4.cloudfront.net/user_35NBuSfIPglHIOMZxxqoxDRFcyj/hf_20260716_103914_c146e578-1564-43ba-a550-3b02e671cc40.png" alt="David Chen" loading="lazy"></div>
+        <blockquote>"Alex breaks down complex threats online into clear, actionable steps."</blockquote>
+        <figcaption class="who">David Chen<em>CEO, Westfield Property Group</em></figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- REFRAME -->
+<section class="sec dark has-bg bg-soft" id="threat" aria-labelledby="reframe-h">
+  <div class="sec-bg" aria-hidden="true"><img src="https://cdn.katalyst-crm.com/t1/gffg.png" alt="" loading="lazy"></div>
+  <div class="wrap">
+    <div class="centered reveal">
+      <p class="eyebrow" style="color:var(--gold)">The Reframe</p>
+      <h2 class="sec-title bold oneline" id="reframe-h" style="margin-top:.7rem">Hacking Is a Business Model</h2>
+      <hr class="rule center">
+    </div>
+    <div class="centered reveal" style="max-width:900px">
+      <p class="sub" style="margin-inline:auto">For years, cybercriminals worked like any rational business. They chased the biggest return for the least effort. That meant targeting large corporations with deep pockets and valuable data. A small business with thirty employees simply wasn't worth the time.</p>
+      <p class="big-line" style="margin-top:1.4rem">AI changed the math.</p>
+    </div>
+    <div class="compare reveal">
+      <div class="model old">
+        <span class="tag"><svg><use href="#ic-clock"/></svg> The Old Model</span>
+        <h3>Slow, manual, selective</h3>
+        <p>A hacker manually researched a target, built a custom attack, and spent days or weeks executing it. Only the biggest payoffs justified the labor.</p>
+      </div>
+      <div class="model new">
+        <span class="tag"><svg><use href="#ic-bolt"/></svg> The New Model</span>
+        <h3>Automated, instant, everywhere</h3>
+        <p>An AI agent scans thousands of company domains a day, automatically, at almost no cost. It doesn't care if you're a multinational bank or a family business with a website and a bank account. It only cares that you're reachable.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SCROLL TEXT REVEAL -->
+<section class="scroll-text-sec has-bg" aria-label="The reality of modern cyberthreats">
+  <div class="sec-bg" aria-hidden="true"><img src="https://d8j0ntlcm91z4.cloudfront.net/user_35NBuSfIPglHIOMZxxqoxDRFcyj/hf_20260719_230942_780cc7e4-78c6-4a90-be87-871f4f33dc8b.png" alt="" loading="lazy"></div>
+  <div class="wrap">
+    <div class="scroll-text centered">
+      <p class="st-eyebrow st-line" data-st>The new math</p>
+      <p class="st-lead st-line" data-st><span class="hl">Hacking is a business model.</span> And AI just made your business highly profitable to them.</p>
+      <hr class="st-rule">
+      <p class="st-mid st-line" data-st>The size of your company no longer determines whether you're a target. It only determines how prepared you are when you're found.</p>
+      <p class="st-body st-line" data-st>And once an AI agent finds you, it doesn't try to break your firewall. It writes an email that sounds exactly like your bank. It calls your office pretending to be a vendor you already trust. The technology got faster. The point of entry stayed exactly the same. A person, making a split-second decision.</p>
+    </div>
+  </div>
+</section>
+
+<!-- HUMAN VULNERABILITY -->
+<section class="sec" id="human" aria-labelledby="human-h">
+  <div class="wrap">
+    <div class="hv-top reveal">
+      <div>
+        <p class="eyebrow">The Human Vulnerability</p>
+        <h2 class="sec-title bold" id="human-h" style="margin-top:.7rem">Your Software Isn't the Problem</h2>
+        <hr class="rule">
+        <p class="sub">Firewalls stop intrusions. Antivirus catches known threats. Both are necessary. Neither one can stop an employee from picking up the phone.</p>
+        <p class="big-line" style="margin-top:1.6rem">The weakest part of any cybersecurity practice is the part that sits between the keyboard and the chair.</p>
+      </div>
+      <figure class="hv-media">
+        <img src="https://d8j0ntlcm91z4.cloudfront.net/user_35NBuSfIPglHIOMZxxqoxDRFcyj/hf_20260719_214739_f57df4cd-7fb9-4da6-b54e-01fa2f23195a.png" alt="An employee taking a phone call at their desk" loading="lazy">
+        <figcaption class="hv-tag">The entry point</figcaption>
+      </figure>
+    </div>
+
+    <div class="casefile reveal">
+      <div class="cf-head">
+        <span class="cf-label">Case File</span>
+        <span class="cf-title">HB Gary</span>
+      </div>
+      <div class="cf-body">
+        <div class="cf-text">
+          <p>Early in his career, Alex worked at HB Gary, a cybersecurity firm that became an industry-wide cautionary tale. After the company's leadership publicly claimed they could unmask a major hacking collective, that collective struck back. They couldn't break through the firm's technical defenses directly, so they went after the people instead, talking their way past an employee to gain access to internal systems. Once inside, password reuse across email, social accounts, and internal tools did the rest.</p>
+          <p>Every private message and internal record the company had was taken and published online.</p>
+          <blockquote class="pullquote">
+            <p>World-class technical defenses. Undone by one conversation with the wrong person.</p>
+          </blockquote>
+        </div>
+        <div class="cf-side">
+          <div class="cf-stat"><b>Technical defenses</b><span>Never breached directly</span></div>
+          <div class="cf-stat"><b>One conversation</b><span>All it took to get inside</span></div>
+          <div class="cf-stat"><b>Password reuse</b><span>Turned access into full compromise</span></div>
+          <div class="cf-stat"><b>Everything</b><span>Published online, permanently</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hv-bottom reveal">
+      <figure class="hv-shot">
+        <img src="https://d8j0ntlcm91z4.cloudfront.net/user_35NBuSfIPglHIOMZxxqoxDRFcyj/hf_20260719_214744_d012cb0f-ab77-4b97-9bd1-62ee79a65327.png" alt="A small business team in a security training session" loading="lazy">
+        <figcaption class="hv-tag">The fix</figcaption>
+      </figure>
+      <div>
+        <p>Your staff are your biggest vulnerability. They're also your biggest asset, once they're trained to recognize what an attack actually looks like.</p>
+        <p class="hv-close" style="margin-top:1.2rem">You don't have a software problem. You have a process problem. And a process problem has a fix.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- METHOD -->
+<section class="sec mist" id="method" aria-labelledby="method-h">
+  <div class="wrap">
+    <div class="centered reveal">
+      <p class="eyebrow">How CCO Protects You</p>
+      <h2 class="sec-title oneline" id="method-h" style="margin-top:.5rem">A System, Not a One-Time Fix</h2>
+      <hr class="rule center">
+      <p class="sub">Cybersecurity isn't something you buy once and move on from. It's an ongoing practice, built on four repeatable steps.</p>
+    </div>
+    <div class="cols4 reveal">
+      <div class="col4" data-n="01">
+        <span class="chip"><svg><use href="#ic-search"/></svg></span>
+        <span class="idx">Step 01</span>
+        <h3>Assess</h3>
+        <p>Identify your actual, specific exposure. Not a generic checklist. A real picture of where your business stands today.</p>
+      </div>
+      <div class="col4" data-n="02">
+        <span class="chip"><svg><use href="#ic-grad"/></svg></span>
+        <span class="idx">Step 02</span>
+        <h3>Educate</h3>
+        <p>Train your team in plain language. No jargon, no wasted time, no information they can't use immediately.</p>
+      </div>
+      <div class="col4" data-n="03">
+        <span class="chip"><svg><use href="#ic-shield"/></svg></span>
+        <span class="idx">Step 03</span>
+        <h3>Protect</h3>
+        <p>Implement the policies, procedures, and technical safeguards that turn awareness into action.</p>
+      </div>
+      <div class="col4" data-n="04">
+        <span class="chip"><svg><use href="#ic-cycle"/></svg></span>
+        <span class="idx">Step 04</span>
+        <h3>Repeat</h3>
+        <p>Threats evolve constantly. Your defenses need to evolve with them. Ongoing review keeps your business current, not just compliant on day one.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- OFFERS -->
+<section class="sec" id="offers" aria-labelledby="offers-h">
+  <div class="wrap">
+    <div class="centered reveal">
+      <p class="eyebrow">Offers</p>
+      <h2 class="sec-title oneline" id="offers-h" style="margin-top:.5rem">Find Your Starting Point</h2>
+      <hr class="rule center">
+      <p class="sub">Three ways in, from a free check to full team protection. Pick the one that matches where your business actually is today.</p>
+    </div>
+    <div class="offers reveal">
+      <div class="offer" id="grade">
+        <div class="offer-img"><img src="https://d8j0ntlcm91z4.cloudfront.net/user_35NBuSfIPglHIOMZxxqoxDRFcyj/hf_20260719_232725_64b1497c-f3a8-4dac-b2e4-df88b34b77fd.png" alt="Completing a short security assessment on a tablet" loading="lazy"></div>
+        <div class="offer-pad">
+          <span class="oname">CyberAssess</span>
+          <h3>CyberAssess</h3>
+          <div class="price">Free</div>
+          <details>
+            <summary>What&#39;s included <span class="oi"><svg><use href="#plus"/></svg></span></summary>
+            <p class="odesc">A twelve-question self-guided diagnostic. Answer honestly, and receive an objective security grade from A to F, along with your first steps to improve it. You&#39;ll also be added to a weekly, jargon-free threat advisory newsletter.</p>
+          </details>
+          <a href="#grade" class="btn btn-out">Get Your Free Security Grade</a>
+        </div>
+      </div>
+
+      <div class="offer">
+        <div class="offer-img"><img src="https://d8j0ntlcm91z4.cloudfront.net/user_35NBuSfIPglHIOMZxxqoxDRFcyj/hf_20260719_232730_8252a470-40e9-4438-946c-5abc81721406.png" alt="A business owner working through an online video course" loading="lazy"></div>
+        <div class="offer-pad">
+          <span class="oname">CyberSafe</span>
+          <h3>Security Foundations</h3>
+          <div class="price">$500 <small>flat fee</small></div>
+          <details>
+            <summary>What&#39;s included <span class="oi"><svg><use href="#plus"/></svg></span></summary>
+            <p class="odesc">A ten-video course built for the business owner, not the IT department. In plain language, you&#39;ll get a real walkthrough of how modern attacks actually work: phishing, smishing, vishing, and quishing, password and access risks, the onboarding and offboarding gaps most businesses never close, device security, ransomware and backups, third-party exposure, social engineering, what AI tools your employees are already using without you knowing, and exactly what to do in the first hours after something goes wrong. You finish knowing exactly where your business is exposed and what to fix first.</p>
+          </details>
+          <a href="#grade" class="btn btn-ink">Start My Security Foundations Course</a>
+        </div>
+      </div>
+
+      <div class="offer feature">
+        <div class="offer-img"><img src="https://d8j0ntlcm91z4.cloudfront.net/user_35NBuSfIPglHIOMZxxqoxDRFcyj/hf_20260719_232735_4aab92ef-f858-46b0-b23c-bb22029c4e65.png" alt="A full company team working in an open-plan office" loading="lazy"></div>
+        <div class="offer-pad">
+          <span class="oname">Our Flagship Program</span>
+          <h3>CyberShield for Business</h3>
+          <div class="price">Per seat <small>varies by team size</small></div>
+          <details>
+            <summary>What&#39;s included <span class="oi"><svg><use href="#plus"/></svg></span></summary>
+            <p class="odesc">Every employee completes a structured training curriculum with built-in knowledge checks, then faces a real simulated phishing attempt to see who&#39;s actually ready, not just who says they are. You get a full policy and procedure suite covering the essentials, acceptable use, data protection, incident response, and more, plus a staged implementation plan to put it into practice. Protection doesn&#39;t stop after year one: renewal keeps training current as threats evolve, with a fresh simulation each year, quarterly threat briefings on emerging risks, and a report showing exactly how much your team has improved. It&#39;s the only program built to keep working for you well past year one.</p>
+          </details>
+          <a href="#grade" class="btn btn-gold">Book My CyberShield Strategy Call</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- OBJECTIONS -->
+<section class="sec mist" aria-labelledby="obj-h">
+  <div class="wrap">
+    <div class="centered reveal">
+      <p class="eyebrow">Before You Decide</p>
+      <h2 class="sec-title oneline" id="obj-h" style="margin-top:.5rem">The Questions Worth Asking</h2>
+      <hr class="rule center">
+    </div>
+    <div class="obj-layout">
+      <aside class="obj-aside reveal">
+        <div class="notfor">
+          <span class="chip"><svg><use href="#ic-alert"/></svg></span>
+          <div><b>This isn't for every business.</b>
+          <p>If you're not willing to put documented policies in place or get your team trained, no software purchase will protect you. CCO works for business owners ready to treat security as an operational habit, not a line item they check once and forget.</p></div>
+        </div>
+      </aside>
+      <div class="faq reveal">
+        <details open>
+          <summary><span class="q">"Cybersecurity feels expensive for a business our size."</span><span class="ic"><svg><use href="#plus"/></svg></span></summary>
+          <div class="a">
+            <p>EasyJet founder Stelios Haji-Ioannou is widely quoted for a line worth remembering: if you think safety is expensive, try having an accident. A single breach costs a business far more than a training course ever will, in downtime and recovery alone.</p>
+            <blockquote class="pullquote"><p>A breach doesn't just cost you money. It costs the customer trust and reputation that take years to build and one click to lose.</p><span class="attr">Alex East, Founder</span></blockquote>
+          </div>
+        </details>
+        <details>
+          <summary><span class="q">"How do I know this isn't just fear tactics dressed up as consulting?"</span><span class="ic"><svg><use href="#plus"/></svg></span></summary>
+          <div class="a"><p>Look at the track record above. RSA Conference is not a stage handed out lightly, it is the industry's largest global event. The credentials, the media appearances, the published books: none of that comes from marketing. It comes from fifteen years of actually doing the work, at the highest level.</p></div>
+        </details>
+        <details>
+          <summary><span class="q">"We already have an IT person who handles our firewalls."</span><span class="ic"><svg><use href="#plus"/></svg></span></summary>
+          <div class="a"><p>Good. Keep them. IT support installs and maintains your technical systems. CCO trains your people and builds the policies that govern how they use those systems. A firewall can't stop an employee from being talked into something they shouldn't do. That's a human problem, and it needs a human solution.</p></div>
+        </details>
+        <details>
+          <summary><span class="q">"We're too busy right now. This can wait until next quarter."</span><span class="ic"><svg><use href="#plus"/></svg></span></summary>
+          <div class="a"><p>AI-driven scanning tools don't wait for your fiscal calendar. They run every day, automatically, looking for the first unlocked door. Every quarter you delay is a quarter your business sits exposed to a threat that's actively looking for you.</p></div>
+        </details>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOUNDER -->
+<section class="founder" id="about">
+  <div class="split rev">
+    <div class="media m-work">
+      <img src="https://cdn.katalyst-crm.com/t1/ChatGPT%20Image%2016%20Tem%202026%2014_08_44%202.png" alt="Alex East, founder of Cybersecurity Coach Online" loading="lazy">
+      <span class="medialbl">The Founder Story</span>
+    </div>
+    <div class="split-text">
+      <div class="inner reveal">
+        <p class="eyebrow">Founder Story</p>
+        <h2 class="sec-title bold" style="margin-top:.7rem">The Security Guard You Never Had</h2>
+        <hr class="rule">
+        <div class="stack">
+          <p>Alex spent his career defending some of the largest companies on earth from the most sophisticated threats their attackers could build. Then a family member lost her life savings to a lottery scam.</p>
+          <p>He had spent years helping Fortune 50 companies defend against exactly that kind of manipulation. None of it reached the one person he actually needed to protect. The security world he worked in and the world his family lived in were completely disconnected, and that gap cost someone he loved dearly.</p>
+        </div>
+        <details class="readmore">
+          <summary><span class="rm-more">Read more</span><span class="rm-less">Read less</span><span class="rm-ic"><svg><use href="#caret"/></svg></span></summary>
+          <div class="rm-body stack">
+            <p>The gap wasn't technical. It was access. Enterprise-grade security knowledge stayed locked behind corporate boardrooms, while the small business owners, families, and everyday people facing the same threats had none of the same protection.</p>
+            <p>Cybersecurity Coach Online exists to close that gap. Alex built it to give small and mid-size businesses, the ones with 10 to 200 employees who've been left out of the enterprise security conversation entirely, the same caliber of protection a multinational would pay millions for, at a price that actually fits their business.</p>
+          </div>
+        </details>
+        <blockquote class="pullquote" style="margin-top:2rem">
+          <p>I built Cybersecurity Coach Online to take the enterprise-grade defenses I spent fifteen years building for the world's largest companies and make them accessible to the small businesses that don't have a security team of their own.</p>
+          <span class="attr">Alex East, Founder</span>
+        </blockquote>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LEAD MAGNET -->
+<section class="sec gold-sec" aria-labelledby="lead-h">
+  <div class="wrap">
+    <div class="lead-inner reveal">
+      <p class="eyebrow">Start Free</p>
+      <h2 class="sec-title bold" id="lead-h" style="margin-top:.5rem">Start With Your Free Security Grade</h2>
+      <hr class="rule center">
+      <p class="lead-i" style="font-size:clamp(1.15rem,2.3vw,1.4rem);color:#3a2f00;margin-top:.5rem">Before you commit to anything, find your biggest gap first.</p>
+      <p style="color:#3a2f00;font-weight:600;margin-top:1.2rem">Answer twelve straightforward questions about your current setup. In under three minutes, you'll get an objective grade from A to F, along with the specific weak point most likely to get you breached first. No sensitive company data required. No sales call needed to get your results.</p>
+      <ul class="leadlist">
+        <li><svg><use href="#check"/></svg> Objective grade from A to F</li>
+        <li><svg><use href="#check"/></svg> Your weakest point, identified first</li>
+        <li><svg><use href="#check"/></svg> Under three minutes to complete</li>
+        <li><svg><use href="#check"/></svg> No sensitive company data required</li>
+      </ul>
+      <div style="margin-top:2rem">
+        <a href="#grade" class="btn btn-ink" style="margin-inline:auto">Get Your Free Security Grade <svg class="chev"><use href="#chev"/></svg></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL DARK CTA -->
+<section class="sec dark has-bg" aria-labelledby="final-h">
+  <div class="sec-bg" aria-hidden="true"><img src="https://d8j0ntlcm91z4.cloudfront.net/user_35NBuSfIPglHIOMZxxqoxDRFcyj/hf_20260719_230954_affeaabc-e53d-4578-9aaf-62a4b63bb011.png" alt="" loading="lazy"></div>
+  <div class="wrap">
+    <div class="final-center reveal">
+      <p class="eyebrow" style="color:var(--gold)">Final Word</p>
+      <h2 class="sec-title bold" id="final-h" style="margin-top:.5rem">Don't Wait Until After the Breach</h2>
+      <hr class="rule center">
+      <p class="sub">Every day your business operates without a documented security plan is a day you're gambling on being overlooked. AI-driven threats don't run on luck. Neither should your defense.</p>
+      <p style="color:#b9bcbf;margin-top:1rem">Don't go another week not knowing where you stand. Start with the free assessment. Or skip ahead and book a call if you're ready for full team protection.</p>
+      <div class="final-cta">
+        <a href="#grade" class="btn btn-gold">Get Your Free Security Grade</a>
+        <a href="#offers" class="btn btn-out-light">Book Your Free Strategy Call</a>
+      </div>
+      <p class="kicker">Cybersecurity isn't just for big companies. Every business, every family, every person deserves to feel safe online.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER CONTACT -->
+<footer class="foot-contact">
+  <div class="wrap fc">
+    <div>
+      <div class="brand"><img src="https://cdn.katalyst-crm.com/t1/ALEX%20EAST%20logo.png" alt="Cybersecurity Coach Online"></div>
+      <p style="max-width:34ch">Enterprise-grade protection, made accessible for small and mid-size businesses.</p>
+    </div>
+    <div>
+      <h5>Contact</h5>
+      <ul>
+        <li><svg><use href="#ic-mail"/></svg> <a href="mailto:info@cybersecuritycoachonline.com">info@cybersecuritycoachonline.com</a></li>
+        <li><svg><use href="#ic-phone"/></svg> <a href="tel:9167122335">916.712.2335</a></li>
+        <li class="fnote">Socials: (Placeholder)</li>
+      </ul>
+    </div>
+    <div>
+      <h5>Legal</h5>
+      <ul>
+        <li><svg><use href="#ic-doc"/></svg> <a href="#">Privacy Policy</a></li>
+        <li><svg><use href="#ic-doc"/></svg> <a href="#">Terms of Service</a></li>
+        <li class="fnote">Placeholder — pages need to be created before launch.</li>
+      </ul>
+    </div>
+  </div>
+  <div class="foot-bottom">
+    <span>© 2026 Cybersecurity Coach Online. All rights reserved.</span>
+    <span class="built-by">Built by <strong>Katek AI</strong></span>
+  </div>
+</footer>
+
+<!-- copyright moved into footer contact -->
+
+<script>
+(function(){
+  var hamb=document.getElementById('hamb'),menu=document.getElementById('mmenu'),open=false;
+  function setOpen(v){open=v;menu.classList.toggle('open',v);hamb.classList.toggle('is-open',v);
+    hamb.setAttribute('aria-expanded',v);hamb.setAttribute('aria-label',v?'Close menu':'Open menu');
+    document.body.style.overflow=v?'hidden':'';}
+  hamb.addEventListener('click',function(){setOpen(!open)});
+  menu.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){setOpen(false)})});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&open)setOpen(false)});
+  window.addEventListener('resize',function(){if(window.innerWidth>=960&&open)setOpen(false)});
+  menu.addEventListener('click',function(e){if(e.target===menu)setOpen(false)});
+})();
+/* header is not sticky: no scroll state needed */
+(function(){if(matchMedia('(prefers-reduced-motion:reduce)').matches)return;
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12,rootMargin:'0px 0px -8% 0px'});
+  document.querySelectorAll('.reveal').forEach(function(el){io.observe(el)});})();
+(function(){var links=[].slice.call(document.querySelectorAll('.nav-links a'));
+  var map=links.map(function(l){return {l:l,sec:document.querySelector(l.getAttribute('href'))}}).filter(function(x){return x.sec});
+  function spy(){var y=window.scrollY+160,cur=null;map.forEach(function(x){if(x.sec.offsetTop<=y)cur=x});
+    links.forEach(function(l){l.classList.remove('active')});if(cur)cur.l.classList.add('active');}
+  spy();window.addEventListener('scroll',spy,{passive:true});})();
+/* scroll text reveal */
+(function(){
+  var lines=document.querySelectorAll('[data-st]');
+  if(!lines.length||matchMedia('(prefers-reduced-motion:reduce)').matches){
+    lines.forEach(function(l){l.classList.add('st-active')});return;
+  }
+  var io=new IntersectionObserver(function(entries){
+    entries.forEach(function(en){
+      if(en.isIntersecting){en.target.classList.add('st-active');io.unobserve(en.target)}
+    });
+  },{threshold:.25,rootMargin:'0px 0px -10% 0px'});
+  lines.forEach(function(l){io.observe(l)});
+})();
+</script>
+</body>
+</html>
