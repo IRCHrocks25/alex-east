@@ -367,7 +367,7 @@ h1,h2,h3,h4{font-family:var(--display);line-height:1.12;color:var(--ink);font-we
 .foot-contact .fc{display:grid;grid-template-columns:1fr;gap:1.4rem}
 @media(min-width:700px){.foot-contact .fc{grid-template-columns:1.4fr 1fr 1fr}}
 .foot-contact .brand{margin-bottom:.8rem}
-.foot-contact .brand img{height:40px;width:auto}
+.foot-contact .brand img{height:56px;width:auto}
 .foot-contact h5{font-family:var(--display);font-weight:700;font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:#fff;margin-bottom:.9rem}
 .foot-contact ul{list-style:none;display:grid;gap:.6rem;font-size:.92rem}
 .foot-contact li{display:flex;align-items:center;gap:.6rem}
@@ -379,8 +379,9 @@ h1,h2,h3,h4{font-family:var(--display);line-height:1.12;color:var(--ink);font-we
 .foot-social svg{width:18px;height:18px;fill:var(--gold);stroke:none;transition:fill .2s}
 .foot-social a:hover svg{fill:var(--ink)}
 .foot-contact .fnote{font-size:.78rem;color:var(--muted)}
-.foot-bottom{border-top:1px solid rgba(255,255,255,.12);margin-top:2rem;padding-top:1.2rem;font-size:.82rem;color:var(--muted);display:flex;flex-direction:column;align-items:center;gap:.5rem;text-align:center}
-@media(min-width:640px){.foot-bottom{flex-direction:row;justify-content:space-between;text-align:left}}
+.foot-bottom{border-top:1px solid rgba(255,255,255,.12);margin-top:2rem;padding-top:1.2rem;font-size:.82rem;color:var(--muted)}
+.foot-bottom .wrap{display:flex;flex-direction:column;align-items:center;gap:.5rem;text-align:center}
+@media(min-width:640px){.foot-bottom .wrap{flex-direction:row;justify-content:space-between;text-align:left}}
 .built-by{font-family:var(--display);font-weight:600;font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;color:#8f959b;display:inline-flex;align-items:center;gap:.4rem}
 .built-by strong{font-weight:700;color:var(--gold)}
 /* footer bar removed */
@@ -1201,8 +1202,10 @@ h1,h2,h3,h4{font-family:var(--display);line-height:1.12;color:var(--ink);font-we
     </div>
   </div>
   <div class="foot-bottom">
-    <span>© 2026 Cybersecurity Coach Online. All rights reserved.</span>
-    <span class="built-by">Built by <strong>Katek AI</strong></span>
+    <div class="wrap">
+      <span>© 2026 Cybersecurity Coach Online. All rights reserved.</span>
+      <span class="built-by">Built by <strong>Katek AI</strong></span>
+    </div>
   </div>
 </footer>
 
