@@ -1,0 +1,841 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Free Cybersecurity Assessment — Cybersecurity Coach Online</title>
+<meta name="description" content="Take our free 15-question cybersecurity assessment designed for small business owners. In under 4 minutes, receive a personalized security grade across six critical domains and get clear, actionable results to improve your cybersecurity posture.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Open+Sans:wght@400;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --gold:#F9C111;--gold-deep:#E6AE00;
+  --ink:#212121;--ink-2:#2a2a2a;--ink-3:#161616;
+  --white:#FFFFFF;--mist:#EBEEF1;--mist-2:#F5F7F9;
+  --text:#4c4c4c;--muted:#8b8f94;--line:#E2E5E8;--line-2:#D6DADE;
+  --line-dark:rgba(255,255,255,.15);
+  --gutter:clamp(1.15rem,5vw,4.5rem);--maxw:1280px;
+  --display:'Montserrat',system-ui,sans-serif;--body:'Open Sans',system-ui,sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{font-family:var(--body);background:var(--white);color:var(--text);line-height:1.7;font-size:clamp(.98rem,.35vw + .92rem,1.05rem);overflow-x:hidden}
+img,svg{max-width:100%;height:auto;display:block}
+a{color:inherit;text-decoration:none}
+button{font:inherit;cursor:pointer;border:none;background:none;color:inherit}
+h1,h2,h3{font-family:var(--display);line-height:1.2;color:var(--ink);font-weight:700}
+:focus-visible{outline:3px solid var(--gold-deep);outline-offset:3px}
+.wrap{max-width:var(--maxw);margin:0 auto;padding-inline:var(--gutter)}
+.rule{width:52px;height:3px;background:var(--gold);border:0;margin:1.1rem 0}
+
+/* header (matches homepage) */
+.header{background:var(--ink);position:relative;z-index:60}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding-block:1.1rem}
+.brand{display:flex;align-items:center;gap:.5rem;color:#fff;flex-shrink:0}
+.brand img{height:44px;width:auto;max-width:none;flex:0 0 auto;object-fit:contain}
+@media(min-width:430px){.brand img{height:50px}}
+.nav-links{display:none}.nav-cta{display:none}
+.hamb{display:inline-flex;flex-direction:column;justify-content:center;gap:5px;width:46px;height:46px;padding:0 11px;border:1px solid rgba(255,255,255,.4);border-radius:2px}
+.hamb span{height:2px;width:100%;background:#fff;transition:transform .3s,opacity .2s}
+.hamb.is-open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.hamb.is-open span:nth-child(2){opacity:0}
+.hamb.is-open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.mmenu{position:fixed;inset:0;z-index:55;background:var(--ink);color:#fff;display:flex;flex-direction:column;gap:.1rem;
+  padding:5.5rem var(--gutter) 2.5rem;transform:translateY(-100%);visibility:hidden;transition:transform .4s cubic-bezier(.7,0,.2,1),visibility 0s .4s;overflow-y:auto}
+.mmenu.open{transform:translateY(0);visibility:visible;transition:transform .4s cubic-bezier(.7,0,.2,1),visibility 0s 0s}
+.mmenu>*{flex-shrink:0}
+.mmenu a{font-family:var(--display);font-weight:600;font-size:clamp(1rem,4.4vw,1.25rem);letter-spacing:.12em;text-transform:uppercase;padding:.75rem 0;border-bottom:1px solid var(--line-dark);color:#fff;display:flex;align-items:center;gap:.7rem;min-height:52px}
+.mmenu a .chev{width:15px;height:15px;stroke:var(--gold);fill:none;stroke-width:2.4;flex:none}
+.mmenu .btn{margin-top:1.3rem;border-bottom:0;justify-content:center;min-height:54px;width:100%}
+@media(max-width:999px){
+  .mmenu{padding:4.5rem var(--gutter) 2rem}
+  .mmenu a{padding:.55rem 0;min-height:46px;font-size:1rem;letter-spacing:.1em}
+  .mmenu .btn{margin-top:.9rem;min-height:48px}
+}
+@media(min-width:1000px){
+  .hamb{display:none}
+  .nav-links{display:flex;align-items:center;gap:.1rem;flex-wrap:nowrap}
+  .nav-links a{font-family:var(--display);font-weight:600;font-size:.77rem;letter-spacing:.13em;text-transform:uppercase;color:#e8e9ea;padding:.55rem .9rem;position:relative;white-space:nowrap}
+  .nav-links a:hover{color:#fff}
+  .nav-cta{display:inline-flex;align-items:center;gap:.55rem;font-family:var(--display);font-weight:700;font-size:.75rem;letter-spacing:.13em;text-transform:uppercase;color:var(--ink);background:var(--gold);border-radius:2px;padding:.8rem 1.3rem;margin-left:.6rem;transition:background .2s;white-space:nowrap;flex-shrink:0}
+  .nav-cta:hover{background:var(--gold-deep)}
+}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.7rem;text-align:center;font-family:var(--display);font-weight:700;font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;padding:1.05rem 1.9rem;border-radius:2px;min-height:52px;transition:background .2s,color .2s,border-color .2s}
+.btn-gold{background:var(--gold);color:var(--ink)}.btn-gold:hover{background:var(--gold-deep)}
+.chev{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:2.4}
+
+/* evaluator intro band (same treatment as the legal pages' hero) */
+.eval-hero{background:var(--ink);color:#fff;padding-block:clamp(2.4rem,6vw,4rem) clamp(2rem,5vw,3rem)}
+.eval-hero .eyebrow{font-family:var(--display);font-weight:700;font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold)}
+.eval-hero h1{font-size:clamp(1.9rem,4.6vw,2.9rem);margin-top:.6rem;color:#fff}
+
+/* stage that holds the evaluator card */
+.eval-stage{background:var(--ink-3);padding-block:clamp(2rem,5vw,3.5rem) clamp(2.6rem,6vw,4.5rem)}
+.eval-stage .wrap{display:flex;justify-content:center}
+#cse-root{font-family:'Poppins',sans-serif}
+#cse-root h2,#cse-root h3{font-family:'Poppins',sans-serif}
+
+/* ===== CyberPosture Evaluator (ported 1:1 from the previous site's embed block) ===== */
+:root {
+  --cyber-bg: #0a0f1e;
+  --cyber-border: #1e2d4a;
+  --cyber-accent: #00e5ff;
+  --cyber-accent2: #3b82f6;
+  --cyber-green: #22c55e;
+  --cyber-amber: #f59e0b;
+  --cyber-red: #ef4444;
+  --cyber-text: #e2e8f0;
+  --cyber-muted: #64748b;
+  --cyber-card: #111827;
+}
+#cse-root { background: var(--cyber-bg); color: var(--cyber-text); width: 100%; max-width: 680px; border-radius: 12px; overflow: hidden; border: 1px solid var(--cyber-border); }
+.cse-header { background: #0a0f1e; border-bottom: 1px solid var(--cyber-border); padding: 24px 28px 20px; position: relative; overflow: hidden; }
+.cse-header::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, transparent, var(--cyber-accent), var(--cyber-accent2), transparent); }
+.cse-logo-row { display: flex; align-items: center; gap: 10px; margin-bottom: 6px; }
+.cse-shield { width: 32px; height: 32px; background: linear-gradient(135deg, var(--cyber-accent2), var(--cyber-accent)); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 18px; flex-shrink: 0; }
+.cse-title { font-size: 18px; font-weight: 700; color: #fff; letter-spacing: 0.05em; text-transform: uppercase; }
+.cse-subtitle { font-size: 12px; color: var(--cyber-muted); letter-spacing: 0.08em; }
+.cse-progress-bar { margin-top: 16px; height: 3px; background: var(--cyber-border); border-radius: 2px; overflow: hidden; }
+.cse-progress-fill { height: 100%; background: linear-gradient(90deg, var(--cyber-accent2), var(--cyber-accent)); border-radius: 2px; transition: width 0.5s ease; }
+.cse-progress-label { font-size: 11px; color: var(--cyber-muted); margin-top: 6px; letter-spacing: 0.06em; }
+.cse-body { padding: 28px; }
+.cse-section-tag { display: inline-flex; align-items: center; gap: 6px; font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--cyber-accent); margin-bottom: 8px; }
+.cse-section-tag.ai-tag { color: #a78bfa; }
+.cse-section-dot { width: 6px; height: 6px; background: var(--cyber-accent); border-radius: 50%; animation: pulse 1.5s ease-in-out infinite; }
+.ai-tag .cse-section-dot { background: #a78bfa; }
+@keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
+.cse-question { font-size: 16px; font-weight: 600; color: #fff; line-height: 1.5; margin-bottom: 20px; }
+.cse-options { display: flex; flex-direction: column; gap: 10px; }
+.cse-option { background: var(--cyber-card); border: 1px solid var(--cyber-border); border-radius: 8px; padding: 14px 16px; cursor: pointer; display: flex; align-items: center; gap: 12px; transition: all 0.2s ease; font-family: 'Poppins', sans-serif; font-size: 14px; color: var(--cyber-text); text-align: left; width: 100%; }
+.cse-option:hover { border-color: var(--cyber-accent2); background: #161e32; }
+.cse-option.selected { border-color: var(--cyber-accent); background: rgba(0, 229, 255, 0.07); color: #fff; }
+.cse-option-dot { width: 18px; height: 18px; border-radius: 50%; border: 1.5px solid var(--cyber-border); flex-shrink: 0; display: flex; align-items: center; justify-content: center; transition: all 0.2s; }
+.cse-option.selected .cse-option-dot { border-color: var(--cyber-accent); background: var(--cyber-accent); }
+.cse-option.selected .cse-option-dot::after { content: ''; width: 8px; height: 8px; border-radius: 50%; background: var(--cyber-bg); }
+.cse-nav { display: flex; justify-content: space-between; align-items: center; margin-top: 28px; }
+.cse-btn { background: transparent; border: 1px solid var(--cyber-border); color: var(--cyber-muted); padding: 10px 20px; border-radius: 6px; cursor: pointer; font-family: 'Poppins', sans-serif; font-size: 13px; letter-spacing: 0.06em; transition: all 0.2s; }
+.cse-btn:hover:not(:disabled) { border-color: var(--cyber-accent2); color: var(--cyber-text); }
+.cse-btn:disabled { opacity: 0.3; cursor: not-allowed; }
+.cse-btn-primary { background: linear-gradient(135deg, var(--cyber-accent2), var(--cyber-accent)); border: none; color: #fff; padding: 10px 24px; border-radius: 6px; cursor: pointer; font-family: 'Poppins', sans-serif; font-size: 13px; font-weight: 700; letter-spacing: 0.08em; transition: all 0.2s; text-transform: uppercase; }
+.cse-btn-primary:hover:not(:disabled) { opacity: 0.85; }
+.cse-btn-primary:disabled { opacity: 0.4; cursor: not-allowed; }
+
+/* ── Intro screen ── */
+.cse-intro { text-align: center; padding: 8px 0 16px; }
+.cse-intro-icon { font-size: 48px; margin-bottom: 16px; display: block; }
+.cse-intro h2 { font-size: 22px; color: #fff; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 12px; }
+.cse-intro p { font-size: 14px; color: var(--cyber-muted); line-height: 1.7; max-width: 480px; margin: 0 auto 8px; }
+.cse-stats-row { display: flex; justify-content: center; gap: 24px; margin: 20px 0; flex-wrap: wrap; }
+.cse-stat { text-align: center; }
+.cse-stat-num { font-size: 22px; font-weight: 700; color: var(--cyber-accent); }
+.cse-stat-label { font-size: 10px; color: var(--cyber-muted); letter-spacing: 0.1em; text-transform: uppercase; }
+.cse-domain-pills { display: flex; flex-wrap: wrap; justify-content: center; gap: 6px; margin: 16px 0; }
+.domain-pill { font-size: 10px; letter-spacing: 0.08em; padding: 4px 10px; border-radius: 20px; border: 1px solid var(--cyber-border); color: var(--cyber-muted); text-transform: uppercase; }
+.domain-pill.ai { border-color: #7c3aed; color: #a78bfa; background: rgba(167,139,250,0.07); }
+
+/* ── Company size screen ── */
+.cse-size-screen { padding: 8px 0; }
+.cse-size-screen h2 { font-size: 18px; color: #fff; margin-bottom: 8px; line-height: 1.4; }
+.cse-size-screen p { font-size: 13px; color: var(--cyber-muted); margin-bottom: 24px; line-height: 1.6; }
+.cse-size-options { display: flex; flex-direction: column; gap: 10px; margin-bottom: 28px; }
+.cse-size-option { background: var(--cyber-card); border: 1px solid var(--cyber-border); border-radius: 8px; padding: 16px 18px; cursor: pointer; display: flex; align-items: center; gap: 14px; transition: all 0.2s ease; font-family: 'Poppins', sans-serif; text-align: left; width: 100%; }
+.cse-size-option:hover { border-color: var(--cyber-accent2); background: #161e32; }
+.cse-size-option.selected { border-color: var(--cyber-accent); background: rgba(0, 229, 255, 0.07); }
+.cse-size-option-dot { width: 18px; height: 18px; border-radius: 50%; border: 1.5px solid var(--cyber-border); flex-shrink: 0; display: flex; align-items: center; justify-content: center; transition: all 0.2s; }
+.cse-size-option.selected .cse-size-option-dot { border-color: var(--cyber-accent); background: var(--cyber-accent); }
+.cse-size-option.selected .cse-size-option-dot::after { content: ''; width: 8px; height: 8px; border-radius: 50%; background: var(--cyber-bg); }
+.cse-size-label { font-size: 14px; color: var(--cyber-text); font-weight: 600; }
+.cse-size-sub { font-size: 11px; color: var(--cyber-muted); margin-top: 2px; }
+
+/* ── Email gate screen ── */
+.cse-gate-screen { text-align: center; padding: 8px 0; }
+.cse-gate-icon { font-size: 42px; margin-bottom: 16px; display: block; }
+.cse-gate-screen h2 { font-size: 20px; color: #fff; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 10px; }
+.cse-gate-screen p { font-size: 13px; color: var(--cyber-muted); line-height: 1.7; max-width: 440px; margin: 0 auto 24px; }
+.cse-gate-form { display: flex; flex-direction: column; gap: 14px; max-width: 400px; margin: 0 auto 8px; text-align: left; }
+.cse-field-label { font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--cyber-accent); margin-bottom: 6px; display: block; }
+.cse-input { background: var(--cyber-card); border: 1px solid var(--cyber-border); border-radius: 6px; padding: 12px 14px; font-family: 'Poppins', sans-serif; font-size: 13px; color: var(--cyber-text); width: 100%; outline: none; transition: border-color 0.2s; }
+.cse-input:focus { border-color: var(--cyber-accent2); }
+.cse-input::placeholder { color: var(--cyber-muted); }
+.cse-input.error { border-color: var(--cyber-red); }
+.cse-field-error { font-size: 11px; color: #f87171; margin-top: 4px; display: none; }
+.cse-field-error.visible { display: block; }
+.cse-gate-submit { background: linear-gradient(135deg, var(--cyber-accent2), var(--cyber-accent)); border: none; color: #fff; padding: 13px 32px; border-radius: 6px; cursor: pointer; font-family: 'Poppins', sans-serif; font-size: 13px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; width: 100%; transition: opacity 0.2s; margin-top: 6px; }
+.cse-gate-submit:hover:not(:disabled) { opacity: 0.85; }
+.cse-gate-submit:disabled { opacity: 0.5; cursor: not-allowed; }
+.cse-gate-privacy { font-size: 11px; color: var(--cyber-muted); text-align: center; margin-top: 10px; max-width: 400px; margin-left: auto; margin-right: auto; }
+
+/* ── Results ── */
+.cse-grade-ring { text-align: center; margin-bottom: 28px; }
+.cse-grade-display { display: inline-flex; flex-direction: column; align-items: center; justify-content: center; width: 110px; height: 110px; border-radius: 50%; border: 3px solid var(--grade-color, var(--cyber-accent)); background: var(--grade-bg, rgba(0,229,255,0.07)); margin-bottom: 12px; }
+.cse-grade-letter { font-size: 44px; font-weight: 900; color: var(--grade-color, var(--cyber-accent)); line-height: 1; }
+.cse-grade-score { font-size: 11px; color: var(--cyber-muted); letter-spacing: 0.08em; }
+.cse-grade-label { font-size: 16px; font-weight: 700; color: #fff; text-transform: uppercase; letter-spacing: 0.1em; }
+.cse-grade-msg { font-size: 13px; color: var(--cyber-muted); margin-top: 6px; line-height: 1.6; max-width: 440px; margin-left: auto; margin-right: auto; }
+.cse-checklist-title { font-size: 12px; letter-spacing: 0.12em; color: var(--cyber-accent); text-transform: uppercase; margin-bottom: 12px; margin-top: 24px; display: flex; align-items: center; gap: 8px; }
+.cse-checklist { display: flex; flex-direction: column; gap: 8px; }
+.cse-check-item { background: var(--cyber-card); border: 1px solid var(--cyber-border); border-radius: 0 8px 8px 0; padding: 12px 14px; display: flex; align-items: flex-start; gap: 10px; font-size: 13px; color: var(--cyber-text); line-height: 1.5; }
+.cse-check-item.priority-high { border-left: 3px solid var(--cyber-red); }
+.cse-check-item.priority-med  { border-left: 3px solid var(--cyber-amber); }
+.cse-check-item.priority-low  { border-left: 3px solid var(--cyber-green); }
+.cse-check-item.ai-item { border-color: #312e81; }
+.cse-check-icon { flex-shrink: 0; margin-top: 1px; font-size: 16px; }
+.cse-priority-badge { font-size: 9px; letter-spacing: 0.1em; padding: 2px 7px; border-radius: 3px; text-transform: uppercase; font-weight: 700; flex-shrink: 0; margin-left: auto; align-self: flex-start; white-space: nowrap; }
+.badge-high { background: rgba(239,68,68,0.15); color: #f87171; }
+.badge-med  { background: rgba(245,158,11,0.15); color: #fbbf24; }
+.badge-low  { background: rgba(34,197,94,0.15); color: #4ade80; }
+.badge-domain { font-size: 8px; padding: 2px 6px; border-radius: 3px; text-transform: uppercase; font-weight: 700; flex-shrink: 0; align-self: flex-start; margin-left: 4px; }
+.badge-ai { background: rgba(167,139,250,0.15); color: #a78bfa; }
+
+/* ── Social proof strip ── */
+.cse-social-proof { display: flex; align-items: center; gap: 10px; background: rgba(59,130,246,0.07); border: 1px solid rgba(59,130,246,0.2); border-radius: 8px; padding: 10px 14px; margin-bottom: 20px; }
+.cse-social-proof-icon { font-size: 20px; flex-shrink: 0; }
+.cse-social-proof-text { font-size: 12px; color: #94a3b8; line-height: 1.5; }
+.cse-social-proof-text strong { color: #e2e8f0; }
+
+/* ── CTA box variants ── */
+.cse-cta-box { margin-top: 28px; border-radius: 10px; padding: 22px 20px; text-align: center; }
+.cse-cta-box.cta-critical { background: linear-gradient(135deg, rgba(239,68,68,0.13), rgba(239,68,68,0.06)); border: 1px solid #ef4444; }
+.cse-cta-box.cta-high     { background: linear-gradient(135deg, rgba(249,115,22,0.13), rgba(249,115,22,0.06)); border: 1px solid #f97316; }
+.cse-cta-box.cta-moderate { background: linear-gradient(135deg, rgba(251,191,36,0.12), rgba(251,191,36,0.05)); border: 1px solid #f59e0b; }
+.cse-cta-box.cta-good     { background: linear-gradient(135deg, rgba(59,130,246,0.10), rgba(0,229,255,0.07)); border: 1px solid var(--cyber-accent2); }
+.cse-cta-eyebrow { font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; margin-bottom: 8px; font-weight: 700; }
+.cta-critical .cse-cta-eyebrow { color: #f87171; }
+.cta-high     .cse-cta-eyebrow { color: #fb923c; }
+.cta-moderate .cse-cta-eyebrow { color: #fbbf24; }
+.cta-good     .cse-cta-eyebrow { color: var(--cyber-accent); }
+.cse-cta-box h3 { font-size: 15px; text-transform: uppercase; letter-spacing: 0.08em; color: #fff; margin-bottom: 8px; line-height: 1.4; }
+.cse-cta-box p { font-size: 13px; color: var(--cyber-muted); margin-bottom: 18px; line-height: 1.65; max-width: 460px; margin-left: auto; margin-right: auto; }
+.cse-cta-btn { background: linear-gradient(135deg, var(--cyber-accent2), var(--cyber-accent)); border: none; color: #fff; padding: 13px 32px; border-radius: 6px; cursor: pointer; font-family: 'Poppins', sans-serif; font-size: 13px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; display: inline-block; transition: opacity 0.2s; }
+.cse-cta-btn:hover { opacity: 0.85; }
+.cse-cta-btn.btn-urgent { background: linear-gradient(135deg, #dc2626, #ef4444); }
+.cse-cta-btn.btn-warn   { background: linear-gradient(135deg, #c2410c, #f97316); }
+.cse-cta-sub { font-size: 11px; color: var(--cyber-muted); margin-top: 10px; letter-spacing: 0.04em; }
+.cse-cta-bullets { list-style: none; text-align: left; display: inline-block; margin: 0 auto 18px; padding: 0; }
+.cse-cta-bullets li { font-size: 12px; color: var(--cyber-muted); padding: 3px 0; display: flex; gap: 8px; align-items: flex-start; }
+.cse-cta-bullets li::before { content: '→'; color: var(--cyber-accent); flex-shrink: 0; }
+
+.ai-banner { background: rgba(109,40,217,0.12); border: 1px solid #4c1d95; border-radius: 8px; padding: 10px 14px; margin-bottom: 20px; font-size: 12px; color: #c4b5fd; letter-spacing: 0.04em; display: flex; align-items: center; gap: 8px; }
+.fade-in { animation: fadeIn 0.35s ease; }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+
+@media (max-width: 520px) {
+  .cse-body { padding: 20px 16px; }
+  .cse-header { padding: 18px 16px 16px; }
+  .cse-question { font-size: 14px; }
+  .cse-option { font-size: 13px; padding: 12px 12px; }
+}
+
+/* footer (matches site) */
+.foot-contact{background:var(--ink);color:#b9bcbf;padding-block:2.4rem}
+.foot-contact .fc{display:grid;grid-template-columns:1fr;gap:1.4rem}
+@media(min-width:700px){.foot-contact .fc{grid-template-columns:1.4fr 1fr 1fr}}
+.foot-contact .brand{margin-bottom:.8rem}
+.foot-contact .brand img{height:56px;width:auto}
+.foot-contact h5{font-family:var(--display);font-weight:700;font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:#fff;margin-bottom:.9rem}
+.foot-contact ul{list-style:none;display:grid;gap:.6rem;font-size:.92rem}
+.foot-contact li{display:flex;align-items:center;gap:.6rem}
+.foot-contact li svg{width:16px;height:16px;flex:none;stroke:var(--gold);fill:none;stroke-width:1.8}
+.foot-contact a:hover{color:var(--gold)}
+.foot-social{display:flex;gap:.7rem;margin-top:.2rem}
+.foot-social a{width:40px;height:40px;border:1px solid rgba(255,255,255,.2);border-radius:50%;display:grid;place-items:center;transition:background .2s,border-color .2s}
+.foot-social a:hover{background:var(--gold);border-color:var(--gold)}
+.foot-social svg{width:18px;height:18px;fill:var(--gold);stroke:none;transition:fill .2s}
+.foot-social a:hover svg{fill:var(--ink)}
+.foot-bottom{border-top:1px solid rgba(255,255,255,.12);margin-top:2rem;padding-top:1.2rem;font-size:.82rem;color:var(--muted)}
+.foot-bottom .wrap{display:flex;flex-direction:column;align-items:center;gap:.5rem;text-align:center}
+@media(min-width:640px){.foot-bottom .wrap{flex-direction:row;justify-content:space-between;text-align:left}}
+.built-by{font-family:var(--display);font-weight:600;font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;color:#8f959b;display:inline-flex;align-items:center;gap:.4rem}
+.built-by strong{font-weight:700;color:var(--gold)}
+
+@media(max-width:520px){
+  .nav{padding-block:.85rem}
+}
+</style>
+</head>
+<body>
+
+<svg style="display:none">
+  <symbol id="chev" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></symbol>
+  <symbol id="ic-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></symbol>
+  <symbol id="ic-phone" viewBox="0 0 24 24"><path d="M4 4h4l2 5-2.5 1.5a11 11 0 0 0 6 6L17 14l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 2 6a2 2 0 0 1 2-2Z"/></symbol>
+  <symbol id="ic-doc" viewBox="0 0 24 24"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8l-5-5Z"/><path d="M14 3v5h5"/></symbol>
+  <symbol id="li" viewBox="0 0 24 24"><path d="M6.5 8H3v13h3.5V8ZM4.7 6.5A2 2 0 1 0 4.7 2.5a2 2 0 0 0 0 4ZM21 21h-3.5v-6.9c0-1.6-.6-2.7-2-2.7-1.1 0-1.7.7-2 1.5-.1.3-.1.6-.1 1V21H9.9s.1-11 0-12h3.5v1.7c.5-.7 1.3-1.8 3.2-1.8 2.3 0 4.1 1.5 4.1 4.8V21Z"/></symbol>
+  <symbol id="fb" viewBox="0 0 24 24"><path d="M14 8h3V4h-3c-2.2 0-4 1.8-4 4v2H7v4h3v6h4v-6h3l1-4h-4V8c0-.6.4-1 1-1Z"/></symbol>
+  <symbol id="tt" viewBox="0 0 24 24"><path d="M16.5 3c.3 2.1 1.6 3.6 3.7 3.9v2.7c-1.3.1-2.5-.3-3.7-1v5.6c0 3.4-2.6 5.8-5.8 5.8A5.6 5.6 0 0 1 5 14.4c0-3.2 2.9-5.6 6.4-5v2.9c-.4-.1-.9-.2-1.3-.2-1.5 0-2.7 1.2-2.6 2.7 0 1.5 1.3 2.6 2.7 2.5 1.4 0 2.5-1.1 2.5-2.6V3h3.8Z"/></symbol>
+</svg>
+
+<header class="header" id="top">
+  <div class="wrap nav">
+    <a class="brand" href="/" aria-label="Cybersecurity Coach Online home"><img src="https://cdn.katalyst-crm.com/t1/ALEX%20EAST%20logo.png" alt="Cybersecurity Coach Online"></a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="/#threat">The Threat</a>
+      <a href="/#human">Human Factor</a>
+      <a href="/#corporate">Corporate</a>
+      <a href="/#method">Method</a>
+      <a href="/#offers">Offers</a>
+      <a href="/#books">Books</a>
+      <a href="/#about">About</a>
+    </nav>
+    <a href="#evaluator" class="nav-cta">Free Grade</a>
+    <button class="hamb" id="hamb" aria-label="Open menu" aria-expanded="false" aria-controls="mmenu"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<nav class="mmenu" id="mmenu" aria-label="Mobile">
+  <a href="/#threat"><svg class="chev"><use href="#chev"/></svg> The Threat</a>
+  <a href="/#human"><svg class="chev"><use href="#chev"/></svg> Human Factor</a>
+  <a href="/#corporate"><svg class="chev"><use href="#chev"/></svg> Corporate</a>
+  <a href="/#method"><svg class="chev"><use href="#chev"/></svg> Method</a>
+  <a href="/#offers"><svg class="chev"><use href="#chev"/></svg> Offers</a>
+  <a href="/#books"><svg class="chev"><use href="#chev"/></svg> Books</a>
+  <a href="/#about"><svg class="chev"><use href="#chev"/></svg> About</a>
+  <a href="#evaluator" class="btn btn-gold">Get Your Free Security Grade</a>
+</nav>
+
+<section class="eval-hero">
+  <div class="wrap">
+    <span class="eyebrow">CyberAssess · Free</span>
+    <h1>CyberPosture Evaluator</h1>
+    <hr class="rule" style="margin-inline:0;margin-bottom:0">
+  </div>
+</section>
+
+<main class="eval-stage" id="evaluator">
+  <div class="wrap">
+    <div id="cse-root">
+      <div class="cse-header">
+        <div class="cse-logo-row">
+          <div class="cse-shield">🛡</div>
+          <div>
+            <div class="cse-title">CyberPosture Evaluator</div>
+            <div class="cse-subtitle">Security assessment &#x26; remediation tool — inc. AI security</div>
+          </div>
+        </div>
+        <div class="cse-progress-bar"><div class="cse-progress-fill" id="cse-progress" style="width:0%"></div></div>
+        <div class="cse-progress-label" id="cse-progress-label">Initialising assessment...</div>
+      </div>
+      <div class="cse-body" id="cse-body"></div>
+    </div>
+  </div>
+</main>
+
+<script>
+var CALENDLY_URL = "https://calendly.com/cybersecuritycoachonline-info";
+
+// ── MailerLite configuration ──────────────────────────────────────────────
+// Form endpoint extracted from your MailerLite embedded form (form ID 189750750922933531).
+// To add custom fields (cyber_score, cyber_grade, company_size) go to:
+// MailerLite → Subscribers → Custom fields → Add field
+// Use these exact field names: cyber_score, cyber_grade, company_size
+var ML_ENDPOINT = "https://assets.mailerlite.com/jsonp/1292743/forms/189750750922933531/subscribe";
+
+var SECTIONS = [
+  { id:"access",   label:"Access Control",    ai:false },
+  { id:"network",  label:"Network Security",  ai:false },
+  { id:"data",     label:"Data Protection",   ai:false },
+  { id:"incident", label:"Incident Response", ai:false },
+  { id:"training", label:"Staff Awareness",   ai:false },
+  { id:"ai",       label:"AI Security",       ai:true  }
+];
+
+var COMPANY_SIZES = [
+  { id:"micro",  label:"1–10 employees",   sub:"Micro-business / sole trader" },
+  { id:"small",  label:"11–50 employees",  sub:"Small business" },
+  { id:"medium", label:"51–250 employees", sub:"Mid-size organisation" },
+  { id:"large",  label:"250+ employees",   sub:"Large organisation" }
+];
+
+var QUESTIONS = [
+  { id:"q1",  section:"access",   text:"How are employee accounts managed when someone leaves the organisation?", opts:[
+    {text:"Accounts are removed immediately via an automated offboarding process",score:3},
+    {text:"Accounts are removed within a few days by IT",score:2},
+    {text:"Accounts are removed eventually, but no formal process exists",score:1},
+    {text:"We don't have a formal offboarding process for accounts",score:0}]},
+  { id:"q2",  section:"access",   text:"Is multi-factor authentication (MFA) enforced across your systems?", opts:[
+    {text:"Yes — MFA is mandatory for all staff on all critical systems",score:3},
+    {text:"MFA is used on some systems but not consistently enforced",score:2},
+    {text:"MFA is available but optional",score:1},
+    {text:"We do not use MFA",score:0}]},
+  { id:"q3",  section:"network",  text:"How is remote access to your internal systems controlled?", opts:[
+    {text:"VPN with MFA is required; access is logged and reviewed",score:3},
+    {text:"VPN is required but logging/review is minimal",score:2},
+    {text:"Remote access is allowed but not tightly controlled",score:1},
+    {text:"No formal controls on remote access",score:0}]},
+  { id:"q4",  section:"network",  text:"When were your firewalls and network security rules last reviewed?", opts:[
+    {text:"Within the last 3 months — rules are reviewed on a schedule",score:3},
+    {text:"Within the last year",score:2},
+    {text:"More than a year ago",score:1},
+    {text:"I'm not sure / never reviewed",score:0}]},
+  { id:"q5",  section:"data",     text:"How is sensitive customer or business data classified and protected?", opts:[
+    {text:"Formal data classification policy exists with encryption enforced at rest and in transit",score:3},
+    {text:"Sensitive data is generally encrypted but no formal classification policy",score:2},
+    {text:"Some data protection measures exist but inconsistently applied",score:1},
+    {text:"No formal data classification or protection measures",score:0}]},
+  { id:"q6",  section:"data",     text:"How frequently are backups tested and verified as restorable?", opts:[
+    {text:"Quarterly or more often — restore tests are documented",score:3},
+    {text:"Annually",score:2},
+    {text:"Backups exist but have never been tested",score:1},
+    {text:"No regular backup process in place",score:0}]},
+  { id:"q7",  section:"incident", text:"Does your organisation have a documented incident response plan?", opts:[
+    {text:"Yes — tested and updated annually with assigned roles",score:3},
+    {text:"Yes — documented but not regularly tested",score:2},
+    {text:"Informal plan exists but nothing documented",score:1},
+    {text:"No incident response plan exists",score:0}]},
+  { id:"q8",  section:"incident", text:"How quickly would you detect a breach or intrusion on your network?", opts:[
+    {text:"Immediately — we have active monitoring and alerting (SIEM/SOC)",score:3},
+    {text:"Within hours via log review",score:2},
+    {text:"Likely days — detection is mostly reactive",score:1},
+    {text:"We would likely not detect it quickly",score:0}]},
+  { id:"q9",  section:"training", text:"How often does your staff receive cybersecurity awareness training?", opts:[
+    {text:"At least annually with phishing simulations and updates",score:3},
+    {text:"Training was done at onboarding but not repeated regularly",score:2},
+    {text:"Ad-hoc / informal only",score:1},
+    {text:"No cybersecurity training provided to staff",score:0}]},
+  { id:"q10", section:"training", text:"How does your organisation handle suspicious emails or phishing attempts?", opts:[
+    {text:"Formal reporting process, email filtering, and staff know what to do",score:3},
+    {text:"Email filtering is in place but limited staff guidance",score:2},
+    {text:"Staff are occasionally reminded but no formal process",score:1},
+    {text:"No process or guidance in place",score:0}]},
+  { id:"q11", section:"ai", text:"Does your organisation have a policy governing employee use of AI tools (e.g. ChatGPT, Copilot, Gemini)?", opts:[
+    {text:"Yes — a formal AI Acceptable Use Policy exists, is communicated to all staff, and is regularly reviewed",score:3},
+    {text:"Basic guidance exists but it is informal or not widely communicated",score:2},
+    {text:"We are aware of the need but no policy has been written yet",score:1},
+    {text:"No policy or guidance on AI tool usage exists",score:0}]},
+  { id:"q12", section:"ai", text:"How does your organisation prevent sensitive data from being entered into external AI tools?", opts:[
+    {text:"Technical controls are in place (DLP, approved AI tool list, browser restrictions) alongside staff training",score:3},
+    {text:"Staff are told not to enter sensitive data but no technical controls enforce this",score:2},
+    {text:"The risk is known but we haven't taken steps to address it",score:1},
+    {text:"We have not considered this risk",score:0}]},
+  { id:"q13", section:"ai", text:"How are your staff trained to recognise AI-enhanced phishing — such as deepfake audio/video, AI-written spear-phishing emails, or voice cloning?", opts:[
+    {text:"Training specifically covers AI-generated threats with examples and verification procedures",score:3},
+    {text:"General phishing training is provided but AI-specific threats are not covered",score:2},
+    {text:"Staff awareness is minimal — we rely on email filters only",score:1},
+    {text:"No training on this topic has been provided",score:0}]},
+  { id:"q14", section:"ai", text:"Are AI tools and integrations used by your business subject to a security review before deployment?", opts:[
+    {text:"Yes — all AI tools/APIs/plugins are reviewed for data handling, permissions, and vendor security posture before use",score:3},
+    {text:"Some review happens but it is inconsistent — decisions are often made by individual teams",score:2},
+    {text:"AI tools are generally adopted without a formal security review",score:1},
+    {text:"No review process exists; staff use whatever tools they choose",score:0}]},
+  { id:"q15", section:"ai", text:"Does your organisation monitor for 'shadow AI' — unauthorised use of AI tools by employees outside approved channels?", opts:[
+    {text:"Yes — monitoring is in place and incidents are reviewed with appropriate follow-up",score:3},
+    {text:"We have some visibility but monitoring is not systematic",score:2},
+    {text:"We suspect shadow AI is occurring but have no visibility or controls",score:1},
+    {text:"We have not considered shadow AI as a risk",score:0}]}
+];
+
+var REMEDIATION = {
+  q1:  { 0:{text:"Implement a formal JML (joiner/mover/leaver) process to immediately revoke access on departure.",priority:"high"},
+          1:{text:"Formalise your offboarding checklist — aim to revoke all access within 24 hours of departure.",priority:"high"},
+          2:{text:"Automate account offboarding to eliminate manual delays in access revocation.",priority:"med"} },
+  q2:  { 0:{text:"Enable MFA immediately on all email, remote access, and admin accounts — the highest single-impact action available.",priority:"high"},
+          1:{text:"Enforce MFA as mandatory on all critical systems. Optional MFA provides minimal real-world protection.",priority:"high"},
+          2:{text:"Audit all systems for MFA gaps and close them systematically.",priority:"med"} },
+  q3:  { 0:{text:"Implement a VPN with MFA for all remote access. Uncontrolled remote access is a leading breach vector.",priority:"high"},
+          1:{text:"Enable remote access logging and review connections regularly for anomalies.",priority:"med"},
+          2:{text:"Ensure VPN logs are reviewed regularly and unusual patterns trigger alerts.",priority:"med"} },
+  q4:  { 0:{text:"Commission an immediate firewall audit. Stale rules are a common and silent attacker entry point.",priority:"high"},
+          1:{text:"Schedule an annual firewall review and remove rules that are no longer justified.",priority:"med"},
+          2:{text:"Move to a quarterly review cycle and document justifications for every rule.",priority:"low"} },
+  q5:  { 0:{text:"Introduce a data classification policy (Public/Internal/Confidential/Restricted) and enforce encryption for all sensitive data.",priority:"high"},
+          1:{text:"Formalise your data classification framework so staff know what protection each tier requires.",priority:"med"},
+          2:{text:"Conduct a data audit to verify encryption is consistently applied and documented.",priority:"low"} },
+  q6:  { 0:{text:"Implement a 3-2-1 backup strategy and schedule quarterly restore tests. An untested backup cannot be relied upon.",priority:"high"},
+          1:{text:"Begin quarterly restore testing and document outcomes. Backup validity must be proven, not assumed.",priority:"high"},
+          2:{text:"Increase backup testing to at least quarterly and document all test results.",priority:"med"} },
+  q7:  { 0:{text:"Create a documented Incident Response Plan with assigned roles, escalation paths, and communication templates.",priority:"high"},
+          1:{text:"Run a tabletop exercise to test your IR plan and update it based on findings at least annually.",priority:"med"},
+          2:{text:"Schedule an annual tabletop exercise and keep contact details and tooling current in your plan.",priority:"low"} },
+  q8:  { 0:{text:"Implement centralised log management and alerting. Without active monitoring, attackers average 200+ days undetected.",priority:"high"},
+          1:{text:"Implement SIEM alerting to shift from reactive log review to proactive threat detection.",priority:"high"},
+          2:{text:"Evaluate a managed detection and response (MDR) service to automate threat identification.",priority:"med"} },
+  q9:  { 0:{text:"Launch a cybersecurity awareness programme immediately. Human error drives over 80% of breaches.",priority:"high"},
+          1:{text:"Implement annual refresher training with phishing simulation exercises.",priority:"med"},
+          2:{text:"Formalise training with scheduled delivery dates and completion tracking.",priority:"low"} },
+  q10: { 0:{text:"Implement email filtering (SPF, DKIM, DMARC) and create a clear process for staff to report suspicious emails.",priority:"high"},
+          1:{text:"Provide clear guidance on recognising and reporting phishing. Add a one-click reporting button to email.",priority:"med"},
+          2:{text:"Review email filtering effectiveness regularly and include phishing scenarios in staff training.",priority:"low"} },
+  q11: { 0:{text:"Draft and publish an AI Acceptable Use Policy defining which tools are permitted, what data may be used with them, and the consequences of non-compliance.",priority:"high",isAi:true},
+          1:{text:"Formalise your AI usage guidance into a written policy, get sign-off from leadership, and communicate it to all staff.",priority:"high",isAi:true},
+          2:{text:"Schedule an annual review of your AI Acceptable Use Policy to keep pace with the rapidly evolving AI tool landscape.",priority:"med",isAi:true} },
+  q12: { 0:{text:"Implement data loss prevention (DLP) controls and an approved AI tool list to prevent sensitive data from being processed by external AI services.",priority:"high",isAi:true},
+          1:{text:"Back up your 'no sensitive data in AI tools' guidance with technical enforcement — policy alone is insufficient for this risk.",priority:"high",isAi:true},
+          2:{text:"Develop a roadmap to implement technical controls that prevent sensitive data entry into unapproved AI tools.",priority:"med",isAi:true} },
+  q13: { 0:{text:"Update security awareness training to include AI-generated threats: voice cloning, deepfake video, and hyper-personalised spear-phishing. Include verbal verification protocols for unusual requests.",priority:"high",isAi:true},
+          1:{text:"Supplement existing phishing training with AI-specific threat scenarios — attackers are already using these techniques at scale.",priority:"high",isAi:true},
+          2:{text:"Reinforce email filtering with AI-specific threat coverage in staff training and establish verbal confirmation procedures for high-value requests.",priority:"med",isAi:true} },
+  q14: { 0:{text:"Establish a lightweight AI tool security review checklist covering data handling practices, vendor security posture, data residency, and access permissions before any AI tool is approved.",priority:"high",isAi:true},
+          1:{text:"Centralise AI tool approval decisions — individual teams should not be able to adopt AI integrations without a security sign-off.",priority:"med",isAi:true},
+          2:{text:"Formalise your AI tool review process and apply it retrospectively to tools already in use.",priority:"low",isAi:true} },
+  q15: { 0:{text:"Begin monitoring for shadow AI using proxy logs, browser policies, or DLP tooling. Unapproved AI tools may be processing sensitive data outside any security control.",priority:"high",isAi:true},
+          1:{text:"Formalise shadow AI monitoring and establish a process for reviewing and responding to incidents of unapproved AI tool use.",priority:"med",isAi:true},
+          2:{text:"Review your shadow AI monitoring coverage periodically — the AI tool landscape changes rapidly and new risks emerge frequently.",priority:"low",isAi:true} }
+};
+
+var CTA_CONFIG = {
+  "F": {
+    style: "cta-critical",
+    eyebrow: "⚠ Immediate action required",
+    heading: "Your score puts you at serious risk of a breach",
+    body: "A Critical Risk grade means your organisation has multiple exploitable gaps right now. A free 30-minute Security Debrief will show you exactly which issues to close first — and in what order.",
+    bullets: [
+      "Understand your top 3 most dangerous gaps",
+      "Get a prioritised, no-jargon action plan",
+      "No obligation — just clarity on where you stand"
+    ],
+    btnClass: "btn-urgent",
+    btnText: "Book Your Free Security Debrief →",
+    sub: "Free · No sales pressure · Plain-English advice from a 15-year enterprise security veteran"
+  },
+  "D": {
+    style: "cta-high",
+    eyebrow: "⚠ High-risk posture detected",
+    heading: "Significant vulnerabilities found — let's prioritise them",
+    body: "A High Risk grade means real, exploitable gaps exist across multiple domains. A free Security Debrief gives you a clear remediation roadmap so you know exactly where to focus first.",
+    bullets: [
+      "Identify which gaps create the most exposure",
+      "Get a practical, sequenced remediation plan",
+      "Talk to someone who explains it in plain English"
+    ],
+    btnClass: "btn-warn",
+    btnText: "Book Your Free Security Debrief →",
+    sub: "Free · No obligation · Plain-English advice from a 15-year enterprise security veteran"
+  },
+  "C": {
+    style: "cta-moderate",
+    eyebrow: "You have a foundation — let's close the gaps",
+    heading: "A Moderate Risk grade means real threats still get through",
+    body: "You're ahead of organisations starting from scratch. But the gaps in your score are the ones attackers exploit most. A free Security Debrief turns your checklist into a concrete 30-day action plan.",
+    bullets: [
+      "Turn findings into a prioritised action plan",
+      "Identify the changes with the highest ROI",
+      "Understand your AI security exposure specifically"
+    ],
+    btnClass: "",
+    btnText: "Book Your Free Security Debrief →",
+    sub: "Free · No obligation · Most organisations improve their grade within 30 days"
+  },
+  "B": {
+    style: "cta-good",
+    eyebrow: "Strong posture — let's make it excellent",
+    heading: "You're close to an A grade. Here's how to get there.",
+    body: "Good security is better than most — but the remaining gaps still represent real exposure, especially as AI-powered attacks evolve. A free Security Debrief will show you exactly what to close.",
+    bullets: [
+      "Identify the specific gaps holding back your grade",
+      "Get ahead of AI-era threats before they reach you",
+      "Build a maintenance plan so your grade stays high"
+    ],
+    btnClass: "",
+    btnText: "Book Your Free Security Debrief →",
+    sub: "Free · No obligation · For security-conscious leaders"
+  },
+  "A": {
+    style: "cta-good",
+    eyebrow: "Outstanding — stay ahead of what's next",
+    heading: "Excellent posture. Let's keep it that way.",
+    body: "Your score is exceptional. The threat landscape evolves constantly — a free Security Debrief can validate your controls against the latest AI-era attack techniques and confirm there are no blind spots.",
+    bullets: [
+      "Validate your controls against emerging AI threats",
+      "Get an expert second opinion on your posture",
+      "Explore advanced protections for your organisation"
+    ],
+    btnClass: "",
+    btnText: "Book Your Free Security Debrief →",
+    sub: "Free · No obligation · For organisations serious about staying secure"
+  }
+};
+
+var state = { screen:"intro", current:0, answers:{}, companySize:null, lead:{name:"",company:"",email:""} };
+
+function getGrade(score, max) {
+  var p = (score/max)*100;
+  if (p >= 90) return {letter:"A+",gradeKey:"A",label:"Excellent",color:"#22c55e",bg:"rgba(34,197,94,0.08)",msg:"Your security posture is strong across all domains including AI. Focus on maintaining standards and staying ahead of emerging threats."};
+  if (p >= 75) return {letter:"B",gradeKey:"B",label:"Good",color:"#4ade80",bg:"rgba(74,222,128,0.07)",msg:"You have solid foundations but specific areas — particularly in AI security — would benefit from focused improvement."};
+  if (p >= 55) return {letter:"C",gradeKey:"C",label:"Moderate Risk",color:"#fbbf24",bg:"rgba(251,191,36,0.07)",msg:"Meaningful gaps exist across multiple domains. Prioritise the high-risk items below, especially any AI-related findings."};
+  if (p >= 35) return {letter:"D",gradeKey:"D",label:"High Risk",color:"#f97316",bg:"rgba(249,115,22,0.08)",msg:"Significant vulnerabilities exist across your security posture. Immediate action on high-priority items is strongly recommended."};
+  return {letter:"F",gradeKey:"F",label:"Critical Risk",color:"#ef4444",bg:"rgba(239,68,68,0.08)",msg:"Your organisation is highly exposed. A breach is a matter of when, not if. Professional guidance should be sought immediately."};
+}
+
+function buildCTA(gradeKey) {
+  var c = CTA_CONFIG[gradeKey] || CTA_CONFIG["C"];
+  var bulletsHtml = c.bullets.map(function(b){ return '<li>' + b + '</li>'; }).join('');
+  return '<div class="cse-cta-box ' + c.style + '">'
+    + '<div class="cse-cta-eyebrow">' + c.eyebrow + '</div>'
+    + '<h3>' + c.heading + '</h3>'
+    + '<ul class="cse-cta-bullets">' + bulletsHtml + '</ul>'
+    + '<a class="cse-cta-btn ' + c.btnClass + '" href="' + CALENDLY_URL + '" target="_blank" rel="noopener">' + c.btnText + '</a>'
+    + '<div class="cse-cta-sub">' + c.sub + '</div>'
+    + '</div>';
+}
+
+function buildSocialProof() {
+  return '<div class="cse-social-proof">'
+    + '<span class="cse-social-proof-icon">🏢</span>'
+    + '<span class="cse-social-proof-text"><strong>Alex East</strong> — 15+ years in enterprise cybersecurity. '
+    + 'Fortune 50 clients. RSA Conference speaker. Now helping organisations like yours build practical, no-nonsense security programmes.</span>'
+    + '</div>';
+}
+
+function validateEmail(email) {
+  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+}
+
+function render() {
+  var body = document.getElementById('cse-body');
+  var prog = document.getElementById('cse-progress');
+  var progLabel = document.getElementById('cse-progress-label');
+
+  if (state.screen === "intro") {
+    prog.style.width = "0%";
+    progLabel.textContent = "Ready to begin assessment";
+    body.innerHTML = '<div class="cse-intro fade-in">'
+      + '<span class="cse-intro-icon">🔍</span>'
+      + '<h2>Security Posture Check</h2>'
+      + '<p>Answer 15 targeted questions across 6 security domains including a dedicated AI security section. Takes under 4 minutes.</p>'
+      + '<p>You\'ll receive a personalised security grade and a prioritised remediation checklist sent directly to your inbox.</p>'
+      + '<div class="cse-stats-row">'
+      + '<div class="cse-stat"><div class="cse-stat-num">15</div><div class="cse-stat-label">Questions</div></div>'
+      + '<div class="cse-stat"><div class="cse-stat-num">6</div><div class="cse-stat-label">Domains</div></div>'
+      + '<div class="cse-stat"><div class="cse-stat-num">A–F</div><div class="cse-stat-label">Grade</div></div>'
+      + '</div>'
+      + '<div class="cse-domain-pills">'
+      + '<span class="domain-pill">Access Control</span>'
+      + '<span class="domain-pill">Network Security</span>'
+      + '<span class="domain-pill">Data Protection</span>'
+      + '<span class="domain-pill">Incident Response</span>'
+      + '<span class="domain-pill">Staff Awareness</span>'
+      + '<span class="domain-pill ai">AI Security ✦ New</span>'
+      + '</div>'
+      + '<button class="cse-btn-primary" onclick="startEval()">▶ Begin Evaluation</button>'
+      + '</div>';
+
+  } else if (state.screen === "size") {
+    prog.style.width = "3%";
+    progLabel.textContent = "About your organisation — 1 of 1";
+    var sizeOpts = COMPANY_SIZES.map(function(s) {
+      return '<button class="cse-size-option' + (state.companySize === s.id ? ' selected' : '') + '" onclick="selectSize(\'' + s.id + '\')">'
+        + '<span class="cse-size-option-dot"></span>'
+        + '<span><div class="cse-size-label">' + s.label + '</div><div class="cse-size-sub">' + s.sub + '</div></span>'
+        + '</button>';
+    }).join('');
+    body.innerHTML = '<div class="cse-size-screen fade-in">'
+      + '<div class="cse-section-tag"><span class="cse-section-dot"></span>Organisation Profile</div>'
+      + '<h2 class="cse-question">How many employees does your organisation have?</h2>'
+      + '<p style="font-size:13px;color:var(--cyber-muted);margin-bottom:20px;">This helps tailor your results and remediation recommendations.</p>'
+      + '<div class="cse-size-options">' + sizeOpts + '</div>'
+      + '<div class="cse-nav">'
+      + '<button class="cse-btn" onclick="goIntro()">← Back</button>'
+      + '<button class="cse-btn-primary" onclick="startQuiz()"' + (state.companySize ? '' : ' disabled') + '>Begin Assessment →</button>'
+      + '</div></div>';
+
+  } else if (state.screen === "quiz") {
+    var q = QUESTIONS[state.current];
+    var section = SECTIONS.find(function(s){ return s.id === q.section; });
+    var pct = Math.round(((state.current + 1) / QUESTIONS.length) * 100);
+    prog.style.width = pct + "%";
+    progLabel.textContent = "Question " + (state.current+1) + " of " + QUESTIONS.length + " — " + section.label;
+    var selected = state.answers[q.id];
+    var aiBanner = section.ai ? '<div class="ai-banner">✦ AI Security domain — these questions assess your governance and controls around AI tool usage in your organisation</div>' : '';
+    var optsHtml = q.opts.map(function(o,i){
+      return '<button class="cse-option' + (selected===i?' selected':'') + '" onclick="selectAnswer(' + i + ')">'
+        + '<span class="cse-option-dot"></span><span>' + o.text + '</span>'
+        + '</button>';
+    }).join('');
+    body.innerHTML = '<div class="fade-in">'
+      + '<div class="cse-section-tag' + (section.ai?' ai-tag':'') + '"><span class="cse-section-dot"></span>' + section.label + '</div>'
+      + aiBanner
+      + '<div class="cse-question">' + q.text + '</div>'
+      + '<div class="cse-options">' + optsHtml + '</div>'
+      + '<div class="cse-nav">'
+      + '<button class="cse-btn" onclick="prevQ()"' + (state.current===0?' disabled':'') + '>← Back</button>'
+      + '<button class="cse-btn-primary" onclick="nextQ()"' + (selected===undefined?' disabled':'') + '>'
+      + (state.current===QUESTIONS.length-1?'Almost done →':'Next →')
+      + '</button></div></div>';
+
+  } else if (state.screen === "gate") {
+    prog.style.width = "98%";
+    progLabel.textContent = "One last step — unlock your results";
+    body.innerHTML = '<div class="cse-gate-screen fade-in">'
+      + '<span class="cse-gate-icon">📋</span>'
+      + '<h2>Your Report Is Ready</h2>'
+      + '<p>Enter your email below to receive your personalised security grade and prioritised remediation checklist.</p>'
+      + '<div id="cse-ml-form-wrapper"></div>'
+      + '<p class="cse-gate-privacy" style="margin-top:12px;">🔒 Your information is kept confidential and never sold. Unsubscribe any time.</p>'
+      + '</div>';
+
+    // Inject the MailerLite embed HTML into the wrapper
+    var mlWrapper = document.getElementById('cse-ml-form-wrapper');
+    if (mlWrapper) { mlWrapper.innerHTML = window._ML_FORM_HTML || ''; }
+
+    // Load the MailerLite webforms script if not already loaded
+    if (!window._mlFormScriptLoaded) {
+      window._mlFormScriptLoaded = true;
+      var mlScript = document.createElement('script');
+      mlScript.src = 'https://groot.mailerlite.com/js/w/webforms.min.js?v83147fa8ce2d95cb73ece7f28b469519';
+      mlScript.onload = function() {
+        fetch('https://assets.mailerlite.com/jsonp/1292743/forms/189750750922933531/takel');
+      };
+      document.body.appendChild(mlScript);
+    }
+
+  } else if (state.screen === "result") {
+    prog.style.width = "100%";
+    progLabel.textContent = "Assessment complete";
+    var totalScore = QUESTIONS.reduce(function(s,q){ return s + (q.opts[state.answers[q.id]] ? q.opts[state.answers[q.id]].score : 0); }, 0);
+    var maxScore = QUESTIONS.length * 3;
+    var grade = getGrade(totalScore, maxScore);
+    var checks = [];
+    QUESTIONS.forEach(function(q){
+      var sc = q.opts[state.answers[q.id]] ? q.opts[state.answers[q.id]].score : 0;
+      if (sc < 3 && REMEDIATION[q.id] && REMEDIATION[q.id][sc]) {
+        var c = REMEDIATION[q.id][sc];
+        checks.push({text:c.text, priority:c.priority, isAi:c.isAi||false});
+      }
+    });
+    checks.sort(function(a,b){ return ({high:0,med:1,low:2}[a.priority]) - ({high:0,med:1,low:2}[b.priority]); });
+    var pl={high:"High",med:"Medium",low:"Low"};
+    var pc={high:"priority-high",med:"priority-med",low:"priority-low"};
+    var pi={high:"⚠",med:"○",low:"✓"};
+    var bc={high:"badge-high",med:"badge-med",low:"badge-low"};
+    var aiCount = checks.filter(function(c){return c.isAi;}).length;
+    var checksHtml = checks.map(function(c){
+      return '<div class="cse-check-item ' + pc[c.priority] + (c.isAi?' ai-item':'') + '">'
+        + '<span class="cse-check-icon">' + pi[c.priority] + '</span>'
+        + '<span>' + c.text + '</span>'
+        + '<span class="cse-priority-badge ' + bc[c.priority] + '">' + pl[c.priority] + '</span>'
+        + (c.isAi?'<span class="badge-domain badge-ai">AI</span>':'')
+        + '</div>';
+    }).join('');
+    var firstName = state.lead.name ? state.lead.name.split(' ')[0] : '';
+    body.innerHTML = '<div class="fade-in">'
+      + (firstName ? '<p style="font-size:13px;color:var(--cyber-muted);margin-bottom:20px;">Here\'s your personalised security report, <strong style="color:#e2e8f0;">' + firstName + '</strong>.</p>' : '')
+      + '<div class="cse-grade-ring">'
+      + '<div class="cse-grade-display" style="--grade-color:' + grade.color + ';--grade-bg:' + grade.bg + ';">'
+      + '<div class="cse-grade-letter">' + grade.letter + '</div>'
+      + '<div class="cse-grade-score">' + totalScore + '/' + maxScore + '</div>'
+      + '</div>'
+      + '<div class="cse-grade-label" style="color:' + grade.color + '">' + grade.label + '</div>'
+      + '<div class="cse-grade-msg">' + grade.msg + '</div>'
+      + '</div>'
+      + (aiCount > 0 ? '<div class="ai-banner" style="margin-bottom:16px;">✦ ' + aiCount + ' AI security finding' + (aiCount>1?'s':'') + ' identified — a growing attack surface for most organisations</div>' : '')
+      + (checks.length > 0
+          ? '<div class="cse-checklist-title">▣ Remediation checklist (' + checks.length + ' items)</div><div class="cse-checklist">' + checksHtml + '</div>'
+          : '<div class="cse-checklist-title">✓ No gaps identified — outstanding posture</div>')
+      + buildSocialProof()
+      + buildCTA(grade.gradeKey)
+      + '</div>';
+  }
+}
+
+function startEval()    { state.screen = "size"; render(); }
+function goIntro()      { state.screen = "intro"; render(); }
+function selectSize(id) { state.companySize = id; render(); }
+function startQuiz()    { if (!state.companySize) return; state.screen = "quiz"; state.current = 0; render(); }
+function selectAnswer(i){ state.answers[QUESTIONS[state.current].id] = i; render(); }
+
+function nextQ() {
+  if (state.answers[QUESTIONS[state.current].id] === undefined) return;
+  if (state.current < QUESTIONS.length - 1) { state.current++; render(); }
+  else { state.screen = "gate"; render(); }
+}
+
+function prevQ() {
+  if (state.current > 0) { state.current--; render(); }
+}
+
+function clearError(fieldId) {
+  var input = document.getElementById(fieldId);
+  var err = document.getElementById(fieldId + '-error');
+  if (input) input.classList.remove('error');
+  if (err) err.classList.remove('visible');
+}
+
+// submitGate removed — MailerLite embedded form handles submission directly
+
+render();
+</script>
+
+<script>
+// MailerLite success callback — fires when the subscriber form submits successfully
+// Advances the evaluator straight to the results screen
+function ml_webform_success_42365903() {
+  if (typeof state !== 'undefined' && typeof render === 'function') {
+    state.screen = 'result';
+    render();
+  }
+}
+</script>
+
+<script>
+// Populate company size hidden field before ML form submits
+document.addEventListener('submit', function(e) {
+  var form = e.target;
+  if (form && form.classList.contains('ml-block-form')) {
+    var sizeField = document.getElementById('ml-company-size-field');
+    if (sizeField && typeof state !== 'undefined' && state.companySize) {
+      var sizeLabels = {
+        micro:  '1-10 employees',
+        small:  '11-50 employees',
+        medium: '51-250 employees',
+        large:  '250+ employees'
+      };
+      sizeField.value = sizeLabels[state.companySize] || state.companySize;
+    }
+  }
+}, true);
+</script>
+<script>
+window._ML_FORM_HTML = "<style type=\"text/css\">@import url(\"https://assets.mlcdn.com/fonts.css?version=1780922\");</style><style type=\"text/css\">#mlb2-42365903.ml-form-embedContainer{box-sizing:border-box;display:table;margin:0 auto;position:static;width:100%!important}#mlb2-42365903.ml-form-embedContainer h4,#mlb2-42365903.ml-form-embedContainer p,#mlb2-42365903.ml-form-embedContainer span,#mlb2-42365903.ml-form-embedContainer button{text-transform:none!important;letter-spacing:normal!important}#mlb2-42365903.ml-form-embedContainer .ml-form-embedWrapper{background-color:#0d0d0d;border-width:0;border-color:transparent;border-radius:4px;border-style:solid;box-sizing:border-box;display:inline-block!important;margin:0;padding:0;position:relative;width:100%!important}#mlb2-42365903.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody,#mlb2-42365903.ml-form-embedContainer .ml-form-embedWrapper .ml-form-successBody{padding:20px 20px 0}#mlb2-42365903.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedContent,#mlb2-42365903.ml-form-embedContainer .ml-form-embedWrapper .ml-form-successBody .ml-form-successContent{text-align:left;margin:0 0 20px}#mlb2-42365903.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedContent h4,#mlb2-42365903.ml-form-embedContainer .ml-form-embedWrapper .ml-form-successBody .ml-form-successContent h4{color:#faf8f8;font-family:\"Open Sans\",Arial,Helvetica,sans-serif;font-size:20px;font-weight:400;margin:0 0 10px;text-align:left;word-break:break-word}#mlb2-42365903.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedContent p,#mlb2-42365903.ml-form-embedContainer .ml-form-embedWrapper .ml-form-successBody .ml-form-successContent p{color:#f8eeee;font-family:\"Open Sans\",Arial,Helvetica,sans-serif;font-size:13px;font-weight:400;line-height:20px;margin:0 0 10px;text-align:left}#mlb2-42365903.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-fieldRow input{background-color:#fff!important;color:#333!important;border-color:#ccc;border-radius:4px!important;border-style:solid!important;border-width:1px!important;font-family:\"Open Sans\",Arial,Helvetica,sans-serif;font-size:14px!important;height:auto;line-height:21px!important;margin-bottom:0;margin-top:0;padding:10px!important;width:100%!important;box-sizing:border-box!important}#mlb2-42365903.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-fieldRow{margin:0 0 10px;width:100%}#mlb2-42365903.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-fieldRow.ml-last-item{margin:0}#mlb2-42365903.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-formContent{margin:0 0 20px;width:100%}#mlb2-42365903.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedSubmit{margin:0 0 20px;float:left;width:100%}#mlb2-42365903.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedSubmit button{background-color:#361c1c!important;border:none!important;border-radius:4px!important;box-shadow:none!important;color:#fff!important;cursor:pointer;font-family:\"Open Sans\",Arial,Helvetica,sans-serif!important;font-size:14px!important;font-weight:700!important;line-height:21px!important;height:auto;padding:10px!important;width:100%!important;box-sizing:border-box!important}#mlb2-42365903.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedSubmit button:hover{background-color:#333!important}.ml-form-embedSubmitLoad{display:inline-block;width:20px;height:20px}.ml-form-embedSubmitLoad:after{content:\" \";display:block;width:11px;height:11px;margin:1px;border-radius:50%;border:4px solid #fff;border-color:#fff #fff #fff transparent;animation:ml-form-embedSubmitLoad 1.2s linear infinite}@keyframes ml-form-embedSubmitLoad{0%{transform:rotate(0)}100%{transform:rotate(360deg)}}.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0}.ml-error input{border-color:red!important}</style><div id=\"mlb2-42365903\" class=\"ml-form-embedContainer ml-subscribe-form ml-subscribe-form-42365903\"><div class=\"ml-form-align-center\"><div class=\"ml-form-embedWrapper embedForm\"><div class=\"ml-form-embedBody ml-form-embedBodyDefault row-form\"><div class=\"ml-form-embedContent\"><h4>Almost there</h4><p>Enter your details to unlock your full security report.</p></div><form class=\"ml-block-form\" action=\"https://assets.mailerlite.com/jsonp/1292743/forms/189750750922933531/subscribe\" data-code=\"\" method=\"post\" target=\"_blank\"><div class=\"ml-form-formContent\"><div class=\"ml-form-fieldRow\"><div class=\"ml-field-group ml-field-name\"><input aria-label=\"name\" type=\"text\" class=\"form-control\" name=\"fields[name]\" placeholder=\"First name\" autocomplete=\"given-name\"></div></div><div class=\"ml-form-fieldRow\"><div class=\"ml-field-group ml-field-last_name\"><input aria-label=\"last_name\" type=\"text\" class=\"form-control\" name=\"fields[last_name]\" placeholder=\"Last name\" autocomplete=\"family-name\"></div></div><div class=\"ml-form-fieldRow ml-last-item\"><div class=\"ml-field-group ml-field-email ml-validate-email ml-validate-required\"><input aria-label=\"email\" aria-required=\"true\" type=\"email\" class=\"form-control\" name=\"fields[email]\" placeholder=\"Email\" autocomplete=\"email\"></div></div></div><input type=\"hidden\" name=\"fields[company_size]\" id=\"ml-company-size-field\" value=\"\"><input type=\"hidden\" name=\"ml-submit\" value=\"1\"><div class=\"ml-form-embedSubmit\"><button type=\"submit\" class=\"primary\">Get My Security Report →</button><button disabled style=\"display:none\" type=\"button\" class=\"loading\"><div class=\"ml-form-embedSubmitLoad\"></div><span class=\"sr-only\">Loading...</span></button></div><input type=\"hidden\" name=\"anticsrf\" value=\"true\"></form></div><div class=\"ml-form-successBody row-success\" style=\"display:none\"><div class=\"ml-form-successContent\"><h4>Got it!</h4><p>Loading your security report...</p></div></div></div></div></div>";
+</script>
+
+<footer class="foot-contact">
+  <div class="wrap fc">
+    <div>
+      <div class="brand"><img src="https://cdn.katalyst-crm.com/t1/ALEX%20EAST%20logo.png" alt="Cybersecurity Coach Online"></div>
+      <p style="max-width:34ch">Enterprise-grade protection, made accessible for organizations of every size, from small businesses to corporations.</p>
+    </div>
+    <div>
+      <h5>Contact</h5>
+      <ul>
+        <li><svg><use href="#ic-mail"/></svg> <a href="mailto:info@cybersecuritycoachonline.com">info@cybersecuritycoachonline.com</a></li>
+        <li><svg><use href="#ic-phone"/></svg> <a href="tel:+19165381611">+1 916 538 1611</a></li>
+      </ul>
+      <h5 style="margin-top:1.4rem">Connect</h5>
+      <div class="foot-social">
+        <a href="https://www.linkedin.com/in/alexaeast/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg><use href="#li"/></svg></a>
+        <a href="https://www.facebook.com/groups/scamstoppers" target="_blank" rel="noopener" aria-label="Facebook Group"><svg><use href="#fb"/></svg></a>
+        <a href="https://www.tiktok.com/@cybersecuritycoachonline" target="_blank" rel="noopener" aria-label="TikTok"><svg><use href="#tt"/></svg></a>
+      </div>
+    </div>
+    <div>
+      <h5>Legal</h5>
+      <ul>
+        <li><svg><use href="#ic-doc"/></svg> <a href="privacy.html">Privacy Policy</a></li>
+        <li><svg><use href="#ic-doc"/></svg> <a href="terms.html">Terms of Service</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="foot-bottom">
+    <div class="wrap">
+      <span>© 2026 Cybersecurity Coach Online. All rights reserved.</span>
+      <span class="built-by">Built by <strong>Katek AI</strong></span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var hamb=document.getElementById('hamb'),menu=document.getElementById('mmenu'),open=false;
+  function setOpen(v){open=v;menu.classList.toggle('open',v);hamb.classList.toggle('is-open',v);
+    hamb.setAttribute('aria-expanded',v);hamb.setAttribute('aria-label',v?'Close menu':'Open menu');
+    document.body.style.overflow=v?'hidden':'';}
+  hamb.addEventListener('click',function(){setOpen(!open)});
+  menu.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){setOpen(false)})});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&open)setOpen(false)});
+  window.addEventListener('resize',function(){if(window.innerWidth>=1000&&open)setOpen(false)});
+  menu.addEventListener('click',function(e){if(e.target===menu)setOpen(false)});
+})();
+</script>
+</body>
+</html>
